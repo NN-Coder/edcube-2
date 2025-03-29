@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdCube | Amazing free math.</title>
+    <link rel="icon" href="https://i.ibb.co/bK5HjNQ/edcubefavicon.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f8e0d4;
+            color: #2c3e50;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #2c3e50;
+            color: #f8e0d4;
+        }
+        input {
+            padding: 10px;
+            margin-right: 10px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .dark-mode button {
+            background-color: #e67e22;
+        }
+        .dark-mode button:hover {
+            background-color: #d35400;
+        }
+        iframe {
+            width: 80%;
+            height: 400px;
+            margin-top: 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+        .dark-mode iframe {
+            border-color: #e67e22;
+        }
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <h2>LineWize Block Checker</h2>
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <span class="slider"></span>
+        </label>
+        <span id="modeText">Dark Mode</span>
+    </div>
+    <input type="text" id="inputValue" placeholder="Enter value">
+    <button onclick="updateIframe()">Submit</button>
+    <button onclick="openInNewTab()">Open in New Tab</button>
+    <br>
+    <iframe id="dynamicFrame" src="https://mvgateway.syd-1.linewize.net/get/verdict?deviceid=PHYS-SMIC-US-0000-3190&cev=3.3.0&identity=null&requested_website="></iframe>
+    
+    <script>
+        function updateIframe() {
+            const inputValue = document.getElementById('inputValue').value;
+            const iframe = document.getElementById('dynamicFrame');
+            if (inputValue.trim() !== "") {
+                const url = `https://mvgateway.syd-1.linewize.net/get/verdict?deviceid=PHYS-SMIC-US-0000-3190&cev=3.3.0&identity=null&requested_website=${encodeURIComponent(inputValue)}`;
+                iframe.src = url;
+            }
+        }
+
+        function openInNewTab() {
+            const inputValue = document.getElementById('inputValue').value;
+            if (inputValue.trim() !== "") {
+                const url = `https://mvgateway.syd-1.linewize.net/get/verdict?deviceid=PHYS-SMIC-US-0000-3190&cev=3.3.0&identity=null&requested_website=${encodeURIComponent(inputValue)}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const modeText = document.getElementById('modeText');
+            if (document.body.classList.contains('dark-mode')) {
+                modeText.textContent = 'Light Mode';
+            } else {
+                modeText.textContent = 'Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>

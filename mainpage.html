@@ -1,0 +1,440 @@
+   <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    
+    <meta property="og:title" content="EdCube Gaming and Resources">
+    <meta property="og:site_name" content="EdCube">
+    <meta property="og:url" content="https://edcube.neocities.org">
+    <meta property="og:description" content="Enhancing your in-browser gaming experience with lots of resource, games, and tools completely free.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.ibb.co/55KmNbz/edcube.jpg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EdCube | Amazing free math.</title>
+    <link rel="icon" href="https://i.ibb.co/bK5HjNQ/edcubefavicon.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link href="stylesmain.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body>
+    <!-- Blurred Background -->
+    <div id="page-blur"></div>
+
+    <!-- Disclaimer Popup -->
+    <div id="disclaimer-popup">
+        <button id="disclaimer-close-btn">&times;</button>
+        <h3 style="color: #ffcc00;">Disclaimer</h3>
+        <p>All embedded games are property of their respective owners. By clicking "Got it!", you confirm that you are at least 18 years of age or have the legal capacity to access and use this website. You agree to comply with the website's Terms of Service and Privacy Policy. This site uses cookies to enhance your experience, and by continuing, you consent to the collection and use of your data as outlined in our policies. The content, games, and resources provided on this site are offered "as is" without any warranties, and you acknowledge that the site owners are not liable for any damages, losses, or consequences arising from the use of this site. Additionally, this site may contain links to third-party websites, and we do not take responsibility for the content, accuracy, or practices of these external sites. You agree that visiting any third-party links is at your own risk.</p>
+        <button id="close-disclaimer">Got it!</button>
+      <span style="margin-top: 10px;">
+          <a href="terms.html" id="disclaimer-more-info" target="_self" style="margin-right: 10px;">Terms of Service</a>
+          <a href="privacypolicy.html" id="disclaimer-more-info" target="_self">Privacy Policy</a>
+      </span>
+
+    </div>
+    <header>
+        <!-- Logo -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><div class="logo"><img src="logo.jpeg"></div></a>
+
+        <div class="header-buttons" id="StickyHeader">
+             <a style="text-decoration: underline;" class="cube-counter" href="search.html"><img style="height: 50px; width: 62.5px;" src="game_images/searchicon.png"></a>
+
+    </header>
+   <!-- <div id="news-bar" class="sliding-news-bar">
+    <div class="sliding-news">
+        <h3>
+  Navigation bar coming to game pages soon!
+  <span style="margin-left: 200px;">Have a business inquiry? Contact us at <a href="mailto:edcubestudios@yahoo.com">edcubestudios@yahoo.com.</a></span>
+  <span style="margin-left: 200px;">This website is completely open-source at <a href="https://github.com/edcubelearning/backup">GitHub.</a></span>
+  <span style="margin-left: 200px;">Pro Tip: Press the "[" key or "r" key on any page to be redirected to the learning page.</span>
+</h3>
+
+    </div>
+    </div>-->
+
+    <h2>Welcome to EdCube Gaming!</h2>
+    <!--<h4>Alternate Links:</h4>
+    <p>Notice: The following links may not be updated as often as the <a href="https://excube.neocities.org">main site</a>.</p>
+    <a href="https://algebrahelp.neocities.org">algebrahelp.neocities.org</a>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>-->
+    
+    <h3 style="margin-bottom: 20px; margin-top: 50px;">Featured Games</h3>
+    <div class="container-fluid" style="border-radius: 20px;">
+        <div id="myCarousel" class="carousel slide bg-inverse ms-auto me-auto" data-bs-ride="carousel" style="border-radius: 20px;">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox" style="border-radius: 20px;">
+            <div class="carousel-item active" style="border-radius: 20px;">
+              <a href="games/smashkarts.html"><img class="d-block w-100" src="game_images/smashkartsbanner.png" alt="Smash Karts"></a>
+              <div class="carousel-caption">
+                <h5>Smash Karts</h5>
+                <p>A fun multiplayer experience with driving AND weaponry at the same time!</p>
+              </div>
+            </div>
+            <div class="carousel-item" style="border-radius: 20px;">
+              <a href="games/1v1lol.html"><img class="d-block w-100" src="game_images/1v1lolbanner.png" alt="1v1.lol"></a>
+              <div class="carousel-caption">
+                <h5>1v1.lol</h5>
+                <p>Fight to be the last one standing in this epic battle.</p>
+              </div>
+            </div>
+            <div class="carousel-item" style="border-radius: 20px;">
+              <a href="games/monkeymart"><img class="d-block w-100" src="game_images/monkeymartbanner.png" alt="Monkey Mart"></a>
+              <div class="carousel-caption">
+                <h5>Monkey Mart</h5>
+                <p>Become as rich as can be in this addictive store managing tycoon game.</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+
+
+    <h3 style="margin-top: 100px;">All Games</h3>
+    <!--<p>Make sure to check out our partner, <a href="https://sems.neocities.org/learning">SMS Learning.</a></p>-->
+    
+    <p><a href="/games/1v1lol.html">1v1.lol</a> and <a href="/games/monkeymart">Monkey Mart</a> are fixed!</p>
+    <div style="margin-top: 40px;" class="button-container">
+        <!-- Example: <a href="/games/.html" class="game-button"><img class="gameimg" src="/game_images/.png" alt=" Logo"><span></span></a> -->
+        <a href="/games/1v1lol.html" class="game-button"><img class="gameimg" src="/game_images/1v1lol.png" alt="1v1.lol Logo"><span>1v1.lol</span></a>
+        
+        <a href="/games/amongus.html" class="game-button"><img class="gameimg" src="/game_images/amongus.png" alt="Among Us Logo"><span>Among Us</span></a>
+
+        <!--<a href="/games/bg2d.html" class="game-button"><img class="gameimg" src="/game_images/bg2d.png" alt="Battlegrounds 2D Logo"><span>Battlegrounds 2D</span></a>-->
+
+        <!--<a href="/games/battleroyale.html" class="game-button"><img class="gameimg" src="/game_images/battleroyale.png" alt="Battle Royale Logo"><span>Battle Royale</span></a>-->
+
+        <a href="/games/bitlife.html" class="game-button"><img class="gameimg" src="/game_images/bitlife.png" alt="Bitlife Logo"><span>Bitlife</span></a>
+
+        <!--<a href="/games/brutal.html" class="game-button"><img class="gameimg" src="/game_images/brutal.png" alt="Brutal Logo"><span>Brutal.io</span></a>-->
+
+        <!--<a href="/games/bulletbonanza.html" class="game-button"><img class="gameimg" src="/game_images/bulletbonanza.png" alt="Bullet Bonanza Logo"><span>Bullet Bonanza</span></a>-->
+
+        <!--<a href="/games/cartoonstrike.html" class="game-button"><img class="gameimg" src="/game_images/cartoonstrike.png" alt="Cartoon Strike Logo"><span>Cartoon Strike</span></a>-->
+        
+        <!--<a href="/games/clashroyale.html" class="game-button"><img class="gameimg" src="/game_images/clashroyale.png" alt="Clash Royale Logo"><span>Clash Royale</span></a>-->
+      
+        <!--<a href="/games/cryzen.html" class="game-button"><img class="gameimg" src="/game_images/cryzen.png" alt="Cryzen.io Logo"><span>Cryzen.io</span></a>-->
+
+        <!--<a href="/games/cubeshot.html" class="game-button"><img class="gameimg" src="/game_images/cubeshot.png" alt="Cubeshot Logo"><span>Cubeshot.io</span></a>-->
+        
+        <a href="/games/drivemad.html" class="game-button"><img class="gameimg" src="/game_images/drivemad.png" alt="Drive Mad Logo"><span>Drive Mad</span></a>
+        
+        <!--<a href="/games/escaperoad2.html" class="game-button"><img class="gameimg" src="/game_images/escaperoad2.png" alt="Escape Road 2 Logo"><span>Escape Road 2</span></a>-->
+
+        <!--<a href="/games/diep.html" class="game-button"><img class="gameimg" src="/game_images/diep.png" alt="Diep Logo"><span>Diep.io</span></a>-->
+
+        <!--<a href="/games/ferge.html" class="game-button"><img class="gameimg" src="/game_images/ferge.png" alt="Ferge.io Logo"><span>Ferge.io</span></a>-->
+        
+        <a href="/games/fireboyandwatergirl.html" class="game-button"><img class="gameimg" src="/game_images/fbawg.png" alt="Fireboy and Watergirl Logo"><span>Fireboy and Watergirl</span></a>
+
+        <a href="/games/geodash.html" class="game-button"><img class="gameimg" src="/game_images/geodash.png" alt="GeoDash Lite Logo"><span>Geometry Dash Lite</span></a>
+      
+        <!--<a href="/games/krunker.html" class="game-button"><img class="gameimg" src="/game_images/krunker.png" alt="Krunker.io Logo"><span>Krunker.io</span></a>-->
+
+        <!--<a href="/games/lolshot.html" class="game-button"><img class="gameimg" src="/game_images/lolshot3.png" alt="Lolshot.io Logo"><span>Lolshot.io</span></a>-->
+             
+        <!--<a href="/games/localchat.html" class="game-button"><img class="gameimg" src="/game_images/localchat.png" alt="Local Chat Logo"><span>Local Chat</span></a>-->
+
+        <a href="/games/lolbeans.html" class="game-button"><img class="gameimg" src="/game_images/lolbeans.png" alt="Lolbeans Logo"><span>Lolbeans.io</span></a>
+
+        <a href="/games/minecraft.html" class="game-button"><img class="gameimg" src="/game_images/minecraft.png" alt="Minecraft Logo"><span>Eaglercraft 1.12</span></a>
+      
+        <!--<a href="/games/miniroyale.html" class="game-button"><img class="gameimg" src="/game_images/miniroyale.png" alt="Mini Royale Logo"><span>Mini Royale</span></a>-->
+
+        <a href="/games/monkeymart" class="game-button"><img class="gameimg" src="/game_images/monkeymart.png" alt="Monkey Mart Logo"><span>Monkey Mart</span></a>
+      
+        <a href="/games/motox3m.html" class="game-button"><img class="gameimg" src="/game_images/motox3m.png" alt="MotoX3M Logo"><span>MotoX3M</span></a>
+       
+        <a href="/games/nuggetroyale.html" class="game-button"><img class="gameimg" src="/game_images/nuggetroyale1.png" alt="Nugget Royale Logo"><span>Nugget Royale</span></a>
+        
+        <a href="/games/ovo.html" class="game-button"><img class="gameimg" src="/game_images/ovo.png" alt="OvO Logo"><span>OvO</span></a>
+
+        <a href="/games/paperio.html" class="game-button"><img class="gameimg" src="/game_images/paperio.png" alt="Paper.io Logo"><span>Paper.io 2</span></a>
+
+        <!-- (Removed due to redirection block) <a href="/games/pokemonshowdown.html" class="game-button"><img class="gameimg" src="/game_images/pokesd2.png" alt="Pokemon Showdown Logo"><span>Pokemon Showdown</span></a>-->
+
+        <!--<a href="/games/powerline.html" class="game-button"><img class="gameimg" src="/game_images/powerline.png" alt="Powerline Logo"><span>Powerline.io</span></a>-->
+      
+        <a href="/games/ragdollhit.html" class="game-button"><img class="gameimg" src="/game_images/ragdollhit.png" alt="Ragdoll Hit Logo"><span>Ragdoll Hit</span></a>
+
+        <!--<a href="/games/repuls.html" class="game-button"><img class="gameimg" src="/game_images/repuls.png" alt="Repuls.io Logo"><span>Repuls.io</span></a>-->
+        
+        <a href="/games/retrobowl.html" class="game-button"><img class="gameimg" src="/game_images/retrobowlmain.png" alt="Retro Bowl Logo"><span>Retro Bowl</span></a>
+        
+        <!--<a href="/games/retrobowlcollege.html" class="game-button"><img class="gameimg" src="/game_images/retrobowlcollege.png" alt="Retro Bowl College Logo"><span>Retro Bowl College</span></a>-->
+
+        <!--<a href="/games/sandstrike.html" class="game-button"><img class="gameimg" src="/game_images/sandstrike.png" alt="Sand Strike Logo"><span>Sand Strike</span></a>
+        
+         <a href="/games/superhex.html" class="game-button"><img class="gameimg" src="/game_images/superhex.png" alt="Superhex.io Logo"><span>Superhex.io</span></a>
+      
+        <a href="/games/slitherio.html" class="game-button"><img class="gameimg" src="/game_images/slitherio.png" alt="Slither.io Logo"><span>Slither.io</span></a>-->
+
+        <a href="/games/slope.html" class="game-button"><img class="gameimg" src="/game_images/slope.png" alt="Slope Logo"><span>Slope</span></a>
+
+        <a href="/games/smashkarts.html" class="game-button"><img class="gameimg" src="/game_images/smashkarts.png" alt="Smash Karts Logo"><span>Smash Karts</span></a>
+      
+        <!--<a href="/games/snowballio.html" class="game-button"><img class="gameimg" src="/game_images/snowballio2.png" alt="Snowball.io Logo"><span>Snowball.io</span></a>-->
+
+        <a href="/games/snowrider3d.html" class="game-button"><img class="gameimg" src="/game_images/snowrider3d.png" alt="Snow Rider 3D Logo"><span>Snow Rider 3D</span></a>
+
+        <!--<a href="/games/starblast.html" class="game-button"><img class="gameimg" src="/game_images/starblast.png" alt="Starblast Logo"><span>Starblast.io</span></a>-->
+      
+        <!--<a href="/games/subwaysurfers.html" class="game-button"><img class="gameimg" src="/game_images/subwaysurfers.png" alt="Subway Surfers Logo"><span>Subway Surfers</span></a>
+
+        <a href="/games/swordz.html" class="game-button"><img class="gameimg" src="/game_images/swordz2.png" alt="Swordz Logo"><span>Swordz.io</span></a>-->
+        
+        <a href="/games/tanuki-sunset.html" class="game-button"><img class="gameimg" src="/game_images/tanuki-sunset.png" alt="Slope Logo"><span>Tanuki Sunset</span></a>
+
+        <a href="/games/templerun.html" class="game-button"><img class="gameimg" src="/game_images/templerun.png" alt="Temple Run Logo"><span>Temple Run 2</span></a>
+
+        <a href="/games/tinyfishing.html" class="game-button"><img class="gameimg" src="/game_images/tinyfishing.png" alt="Tiny Fishing Logo"><span>Tiny Fishing</span></a>
+
+        <a href="/games/templeofboom.html" class="game-button"><img class="gameimg" src="/game_images/templeofboom.png" alt="Temple of Boom Logo"><span>Temple of Boom</span></a>
+
+        <!--<a href="/games/tribals.html" class="game-button"><img class="gameimg" src="/game_images/tribals.png" alt="Tribals Logo"><span>Tribals.io</span></a>
+
+        <a href="/games/vectaria.html" class="game-button"><img class="gameimg" src="/game_images/vectaria.png" alt="Vectaria Logo"><span>Vectaria</span></a>
+      
+        <a href="/games/warbands.html" class="game-button"><img class="gameimg" src="/game_images/warbands.png" alt="Warbands Logo"><span>Warbands</span></a>-->
+
+
+    </div>
+    <h2>Tools</h2>
+    <a href="/tools/linewize-block-check.html">LineWize Block Checker</a>
+
+
+    <!--<h2 class="otherlinkstext">Resources</h2>
+    <div class="button-grid">
+      <a href="/games/interstellar-links.html" class="game-button"><img class="gameimg" src="/game_images/interstellar.png" alt="Interstellar Logo"><span>80+ Interstellar Proxy Links</span></a>
+      
+      <a href="/games/chatgpt.html" class="game-button"><img class="gameimg" src="/game_images/chatgpt.png" alt="ChatGPT Logo"><span>ChatGPT</span></a>
+
+      <a href="/games/incog.html" class="game-button"><img class="gameimg" src="/game_images/searchencrypt.png" alt="Search Encrypt Logo"><span>Incognito Search</span></a>
+
+      <a href="/games/litsolutions.html" class="game-button"><img class="gameimg" src="/game_images/litsolutions.png" alt="LitSolutions Logo"><span>Textbook Answers</span></a>
+
+    </div>-->
+
+   <!-- <h2 class="otherlinkstext">External Links</h2>
+    <div class="button-grid">
+
+    <p><a href="https://cubeproxy.vercel.app/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/cubeproxy.png" alt="CubeProxy Logo"><span>CubeProxy</span></a></p>
+    
+    <p><a href="https://cube0.vercel.app/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/cube0.png" alt="CUBE0 AI Logo"><span>CUBE0 AI</span></a></p>
+    
+    <p><a href="hhttps://sites.google.com/view/edcubetech/home" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/edcubetech.png" alt="EdCube Tech Logo"><span>EdCube Tech Tips</span></a></p>
+      
+    <p><a href="https://history.education.hbmc.net" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/interstellar.png" alt="Interstellar Logo"><span>Interstellar Proxy</span></a></p>
+
+    Brawl Stars
+    <p><a href="https://yandex.com/games/app/253517?utm_source=game_popup_menu#app-id=253517&catalog-session-uid=catalog-02a08b17-291b-5a78-b202-144f7646e591-1726702840392-4e1d&rtx-reqid=2660801901021142540&pos=%7B%22listType%22%3A%22suggested%22%2C%22tabCategory%22%3A%22common%22%7D&redir-data=%7B%22block%22%3A%22suggested%22%2C%22block_index%22%3A1%2C%22card%22%3A%22adaptive_recommended_new%22%2C%22col%22%3A0%2C%22first_screen%22%3A1%2C%22page%22%3A%22main%22%2C%22rn%22%3A495889249%2C%22row%22%3A1%2C%22rtx_reqid%22%3A%222660801901021142540%22%2C%22same_block_index%22%3A0%2C%22wrapper%22%3A%22grid-list%22%2C%22request_id%22%3A%221726702840098486-17352082741524227831-edi3xrljjzd2t6o6-BAL%22%2C%22http_ref%22%3A%22https%253A%252F%252Fyandex.com%252Fgames%252F%22%7D/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/brawlstars.png" alt="Brawl Stars Logo"><span>Brawl Stars</span></a></p>
+
+    <p><a href="https://www.silvergames.com/en/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/silvergames.png" alt="Silver Games Logo"><span>Silver Games</span></a></p>
+
+    <p><a href="https://www.gamecomets.com/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/gamecomets.png" alt="Game Comets Logo"><span>Game Comets</span></a></p>
+
+    <p><a href="https://www.retrogames.me/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/retrogames.png" alt="Retro Games Logo"><span>Retro Games</span></a></p>
+
+    <p><a href="https://www.yandex.com/games/#ion" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/yandexgames.png" alt="Yandex Games Logo"><span>Yandex Games</span></a></p>
+      
+    <p><a href="https://warbrokers.io/#ion/" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/warbrokers.png" alt="Warbrokers.io Logo"><span>Warbrokers</span></a></p>
+
+    <p><a href="https://slowroads.io/#ion/" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/slowroads.png" alt="Slowroads.io Logo"><span>Slowroads.io</span></a></p>
+
+    <p><a href="https://evowars.io/#ion/" class="game-button" target="_blank" rel="noopener noreferrer"><img class="gameimg" src="/game_images/evowars.png" alt="Evowars Logo"><span>EvoWars</span></a></p>
+    </div>
+    <h2>Alternative EdCube Sites</h2>
+
+    <div class="button-grid">
+
+        <a href="https://edcube.firebaseapp.com/" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Firebase App</a>
+
+        <a href="https://edcube.web.app/" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Web App</a>
+
+        <a href="https://edcubelearning.github.io/backup/?ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Github Pages</a>
+    
+        <a href="https://edcube.vercel.app/?ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Vercel</a>
+
+        <a href="https://edcube.netlify.app/?ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Netlify</a>
+    
+        <a href="https://edcube-edcubelearnings-projects.vercel.app/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Vercel #2</a>
+
+        <a href="https://edcubestudios.netlify.app/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Netlify #2</a>
+    
+        <a href="https://edcube-git-main-edcubelearnings-projects.vercel.app/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Vercel #3</a>
+
+        <a href="https://edcubelearning.netlify.app/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Netlify #3</a>
+    
+        <a href="https://0xfffe.org/edcube/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">0xfffe.org</a>
+
+        <a href="https://afroblue.de/edcube/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Afroblue.de</a>
+
+        <a href="https://edcube.glitch.me/#ion" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Glitch #1</a>
+
+        <a href="https://edcube.neocities.org" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Neocities</a>
+
+        <a href="https://backup-w1ew.onrender.com" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Render</a>
+
+        <a href="https://brief-horse-puny.on-fleek.app/" class="otherlinks-button" target="_blank" rel="noopener noreferrer">Fleek</a>
+      
+    </div>-->
+    <!--<h2 class="otherlinkstext">Proxy</h2>
+    <script type="text/javascript">
+  var old = '';
+
+  function init() {
+    window.dynamicframe.document.write(' < embed id = "frame"
+        height = 100 % width = 100 % style = "display:none;position:absolute;top:0%;left:0%"
+        src = "https://google.com" > < \/embed> < script > onbeforeunload = (i) => 1; < \/script>'); window.dynamicframe.document.close(); window.buttons.document.write(' < style type = "text/css" > .expand {
+          position: absolute;top: 0 % ;left: 0 % ;width: 100 % ;height: 100 % ;
+        }.close {
+          border: none;margin: 0 px;padding: 0 px;
+        } < \/style> < form name = "f" > < textarea type = "text"
+        spellcheck = "false"
+        id = "url"
+        style = "color:ffffff;background-color:000000;"
+        class = "expand close"
+        name = "fi" > https: //google.com</textarea>
+        < /form>'); window.buttons.document.close(); update(); } function update() { var textarea = window.buttons.document.f.fi; var d = dynamicframe.document; if (old != textarea.value){ old = textarea.value; d.open(); d.write(` < embed height = 100 % width = 100 % style = "position:absolute;top:0%;left:0%"
+        src = "${textarea.value}" > < \/embed> < script > onbeforeunload = (i) => 1; < \/script>`); d.close(); } window.setTimeout(update, 150); } 
+</script>
+<frameset resizable="yes" rows="2.5%,*" onload="init();">
+<frame name="buttons" src="javascript:'';">
+  <frame name="dynamicframe" src="javascript:'';">
+</frameset>-->
+
+    <!-- Footer -->
+
+    <footer>
+        <p>💡 Pro Tip! Use the hotkey "[" to quickly switch from any page to the EdCube learning page.</p>
+        <p>You can also use the hotkey "]" to go directly from the EdCube learning page to the game page.</p>
+        <p>EdCube is massive... You know what else is massive? The LOOOOOOOW TAPER FADE!</p>
+        <div class="social-icons">
+
+            <a href="https://x.com/edcubestudios" target="_blank"><i class="fab fa-twitter"></i></a>
+
+            <a href="https://www.facebook.com/profile.php?id=61565159837722" target="_blank"><i class="fab fa-facebook"></i></a>
+
+            <a href="https://www.instagram.com/edcubestudios/" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            <a href="https://www.youtube.com/@edcubestudios" target="_blank"><i class="fab fa-youtube"></i></a>
+
+            <a href="https://discord.gg/bxVNGNeP" target="_blank"><i class="fab fa-discord"></i></a>
+
+            <a href="https://github.com/edcubelearning" target="_blank"><i class="fab fa-github"></i></a>
+
+            <a href="https://www.linkedin.com/in/edcube-studios-548469329/" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+            <a href="https://pin.it/6fDRFcogp" target="_blank"><i class="fab fa-pinterest"></i></a>  
+
+            <a href="https://www.reddit.com/r/EdCubeStudios/" target="_blank"><i class="fab fa-reddit"></i></a>
+
+            <a href="https://www.twitch.tv/edcubestudios" target="_blank"><i class="fab fa-twitch"></i></a>
+
+            <a href="https://www.flickr.com/photos/201435764@N07/" target="_blank"><i class="fab fa-flickr"></i></a>
+
+            <a href="https://www.tumblr.com/edcubestudios" target="_blank"><i class="fab fa-tumblr"></i></a>
+            
+            <link rel="me" href="https://mastodon.social/@edcube"></link>
+
+
+
+        </div>
+        <!--<p><a href="https://forms.gle/avL9CVggEWEioNuq5" target="_blank" style="TEXT-DECORATION: underline">Feedback and game requests are greatly appreciated.</a></p>-->
+        <div class="disclaimer">
+
+            <p>Disclaimer: All embedded games are property of their respective owners.</p>
+
+        </div>
+
+    </footer>
+
+
+<script>
+// Show the disclaimer popup only if not already accepted during this session
+    window.onload = function () {
+        if (!sessionStorage.getItem('disclaimerAccepted')) {
+            document.getElementById('disclaimer-popup').style.display = 'block';
+            document.getElementById('page-blur').style.display = 'block';
+        }
+    };
+
+    // Close the disclaimer popup and set session storage
+    document.getElementById('close-disclaimer').onclick = function () {
+        document.getElementById('disclaimer-popup').style.display = 'none';
+        document.getElementById('page-blur').style.display = 'none';
+        sessionStorage.setItem('disclaimerAccepted', 'true');
+    };
+
+    // Close popup with X button
+    document.getElementById('disclaimer-close-btn').onclick = function () {
+        document.getElementById('disclaimer-popup').style.display = 'none';
+        document.getElementById('page-blur').style.display = 'none';
+        sessionStorage.setItem('disclaimerAccepted', 'true');
+    };
+    window.onscroll = function() {myFunction()};
+    var header = document.getElementById("StickyHeader");
+    var sticky = header.offsetTop;
+    function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }};
+
+    document.addEventListener('keydown', function(event) {
+        // Check if the '[' key is pressed 
+        if (event.key === 'r' || event.key === '[') {
+            // Redirect to the desired page
+            window.location.href = 'index.html'; // Replace with the actual URL
+        }
+    });
+    const toggleInput = document.getElementById('toggle');
+        const news_bar = document.getElementById("news-bar");
+
+        toggleInput.addEventListener('change', function() {
+            if (toggleInput.checked) {
+                news_bar.style.display = "block";
+                console.log("Toggle is ON");
+            } else {
+                news_bar.style.display = "none";
+                console.log("Toggle is OFF");
+            }
+        });
+        
+  
+</script>
+<!-- Bundled -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,379 @@
+
+        body {
+
+            background-color: #1a1a1a;
+
+            color: #00ffcc;
+
+            font-family: 'Orbitron', sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            text-align: center;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-start;
+
+        }
+
+
+
+        h2 {
+
+            font-size: 3rem;
+
+            color: #00ffcc;
+
+            text-shadow: 0px 0px 10px #00ffcc;
+
+            margin-top: 50px;
+
+        }
+        h3 {
+
+            font-size: 2.6rem;
+
+            color: #00ffcc;
+
+            text-shadow: 0px 0px 10px #00ffcc;
+
+            margin-top: 50px;
+
+        }
+       
+        /* Set the height of the carousel */
+        .carousel-item img {
+          border-radius: 20px;
+          height: 600px; /* Adjust the height to make the images taller */
+          width: 1180px;
+          object-fit: cover; /* Ensures the image fills the block */
+          border: 2px solid #00ffcc;
+          box-shadow: 0px 0px 15px #00ffcc;
+        }
+      
+        /* Optional: set a larger width for the entire carousel */
+        #myCarousel {
+          border-radius: 20px;
+          margin-top: 20px;
+          height: 600px; /* Adjust the height to make the images taller */
+          width: 1180px;
+        }
+      
+        .carousel-caption {
+          position: absolute;
+          margin-left: 18%;
+          height: 100px;
+          width: 400px;
+          top: 65%;
+          transform: translateY(-50%);
+          color: #fff;
+          background-color: rgba(0, 0, 0, 0.5); /* Adds a background for better readability */
+          padding: 10px;
+          border-radius: 5px;
+        }
+      
+        .game-button {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            border-radius: 51px;
+            border: 2px solid #00ffcc;
+            box-shadow: 0px 0px 15px #00ffcc;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .game-button:hover {
+            border: 2px solid #ff00ff;
+            box-shadow: 0px 0px 15 px #ff00ff;
+        }
+        .game-button img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .game-button:hover img {
+            filter: blur(4px) brightness(0.7);
+        }
+
+        .game-button span {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #00ffcc;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .game-button:hover span {
+            opacity: 1;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr)); /* Creates responsive columns */
+            gap: 20px; /* Space between buttons */
+            justify-items: center; /* Center align buttons horizontally */
+            margin: 50px 200px;
+            text-align: center;
+        }
+
+        .otherlinks-button {
+            text-align: center;
+            display: inline-block;
+            margin: 20px;
+            padding: 20px 20px;
+            background-color: #333;
+            border: 2px solid #00ffcc;
+            color: #00ffcc;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 45%; /* Make buttons stretch to fit their columns */
+            text-align: center;
+            box-shadow: 0px 0px 15px #00ffcc;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .otherlinks-button:hover {
+            background-color: #ff00ff;
+            box-shadow: 0px 0px 25px #ff00ff;
+        }
+
+
+        .button-container {
+
+            margin-top: 50px;
+
+            margin-bottom: 0px; /* Adds space before the footer */
+        }
+        .button-container2 {
+
+            margin-top: 0px;
+
+            margin-bottom: 0px; /* Adds space before the footer */
+
+        }
+        /* Popup styling */
+        #disclaimer-popup {
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2d2d2d;
+            color: #ffcc00;
+            padding: 40px;
+            border: 2px solid #ffcc00;
+            box-shadow: 0px 0px 25px #ffcc00;
+            border-radius: 15px;
+            z-index: 1000;
+            display: none; /* Initially hidden */
+            text-align: center;
+            width: 80%;
+            max-height: 80%; /* Prevent it from getting too tall */
+            overflow-y: auto; /* Enable scrolling if content overflows */
+        }
+
+        #disclaimer-popup h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #disclaimer-popup p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        #close-disclaimer,
+        #disclaimer-close-btn {
+            padding: 10px 30px;
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            border: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #close-disclaimer:hover,
+        #disclaimer-close-btn:hover {
+            background-color: #ff9900;
+        }
+
+        #disclaimer-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: transparent;
+            color: #ffcc00;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        #disclaimer-more-info {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #ffcc00;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        #disclaimer-more-info:hover {
+            color: #ff9900;
+        }
+
+        /* Blurred and dimmed background */
+        #page-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            display: none; /* Initially hidden */
+        }
+
+
+
+        /* Footer styling */
+
+        footer {
+
+            background-color: #111;
+
+            color: #cccccc;
+
+            padding: 20px 0;
+
+            text-align: center;
+
+            position: relative;
+
+            margin-top: 50px;
+
+            bottom: 0;
+
+            width: 100%;
+
+        }
+
+
+
+        footer a {
+
+            color: #00ffcc;
+
+            text-decoration: none;
+
+            margin: 0 10px;
+
+            transition: color 0.3s ease;
+
+        }
+
+
+
+        footer a:hover {
+
+            color: #ff00ff;
+
+        }
+
+
+
+        .social-icons a {
+
+            margin: 0 10px;
+
+        }
+
+
+
+        .social-icons i {
+
+            font-size: 1.5rem;
+
+        }
+
+
+
+        .disclaimer {
+
+            font-size: 0.9rem;
+
+            color: #777;
+            }
+        .otherlinkstext {
+            margin-bottom: 10px;
+            margin-top: 100px;
+        }
+         header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Align vertically */
+            padding: 0px 50px; /* Reduce padding to fit better */
+            background-color: #111;
+            box-shadow: 0px 0px 15px #00ffcc;
+         }
+
+
+        /* Logo styling */
+        .logo {
+            margin-top: 0px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ffcc;
+        }
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+
+        }
+
+        /* Login & Signup Button Styling */
+        .header-buttons {
+             display: flex;
+             align-items: center; /* Align items vertically */
+             gap: 20px;
+         }
+
+
+        .header-buttons a {
+            padding: 10px 0px;
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header-buttons a:hover {
+            color: #ff00ff;
+            text-shadow: 0px 0px 25px #ff00ff;
+        }
