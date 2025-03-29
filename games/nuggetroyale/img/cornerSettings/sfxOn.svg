@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1, .cls-2 { stroke: white; }
+.cls-1 { stroke-linejoin: round; stroke-width: 19.74px; }
+.cls-2 { fill: none; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 26.32px; }</style>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 69.730766, 78.781952)">
+    <polygon class="cls-1" points="9.87 105.3 9.87 233.62 75.68 233.62 167.81 332.34 167.81 9.87 75.68 105.3 9.87 105.3" style="fill: white;"/>
+    <path class="cls-2" d="M 224.47 86.19 C 224.47 86.19 251.47 104.19 251.47 167.19 C 251.47 230.19 224.47 252.7 224.47 252.7"/>
+    <path class="cls-2" d="M 287.48 32.19 C 287.48 32.19 341.48 72.69 341.48 167.19 C 341.48 261.69 287.48 306.71 287.48 306.71"/>
+  </g>
+</svg>

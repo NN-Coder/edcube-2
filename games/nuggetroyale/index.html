@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nugget Royale Unblocked - ClassRoom6x</title>
+    <meta name="website" content="classroom6x.gitlab.io" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon/32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icon/16.png">
+
+    <!--cordova-->
+
+    <script type="text/javascript">
+        let VERSION_TIMESTAMP = "1640300674";
+      let CORDOVA = Array.from(document.head.getElementsByTagName("script")).some(s => s.src.endsWith("cordova.js"));
+
+      function testEs6Supported(){
+        try{
+          eval("var foo = (x)=>x+1");
+          eval("class Test{}");
+          eval("(async () => ({}))()");
+          eval("let test = {...{test:true},...{test2:true}}");
+        }catch(e){
+          return false;
+        }
+
+        if(typeof TextEncoder === "undefined") return false;
+
+        return true;
+      }
+
+      function testWebpSupported(){
+        let el = document.createElement('canvas');
+        if(!el.getContext || !el.getContext("2d")) return false;
+        return el.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+      }
+
+      function setProgressBar(percent){
+        let progressBar = document.getElementById("progressBar");
+        let leftPadding = 8;
+        percent = leftPadding + percent * (100-leftPadding);
+        progressBar.style.width = percent+"%";
+      }
+
+      document.addEventListener("DOMContentLoaded", function(){
+        let supportsWebp = testWebpSupported();
+        if(supportsWebp){
+          let logo = document.getElementById("loadScreenLogo");
+          logo.classList.add("right");
+        }
+        let requests = [
+          {
+            src: (testEs6Supported() ? "js.js?v=" : "js-babel.js?v=") + VERSION_TIMESTAMP,
+            onLoad: function(blobUrl){
+              let script = document.createElement("script");
+              script.async = false;
+              script.src = blobUrl;
+              document.head.appendChild(script);
+            }
+          },
+          {
+            src: "css.css?v="+VERSION_TIMESTAMP,
+            onLoad: function(blobUrl){
+              let style = document.createElement("link");
+              style.rel = "stylesheet";
+              style.href = blobUrl;
+              document.head.appendChild(style);
+            }
+          }
+        ];
+        function calcProgress(){
+          let total = 0;
+          let loaded = 0;
+          for(const req of requests){
+            if(!req.totalLength) return;
+            total += req.totalLength;
+            loaded += req.loaded;
+          }
+          let percent = loaded / total;
+          setProgressBar(percent*0.15);
+        }
+
+        if(VERSION_TIMESTAMP == "000" || CORDOVA){
+          for(const req of requests){
+            req.onLoad(req.src);
+          }
+        }else{
+          for(const req of requests){
+            let xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.addEventListener("progress", function(e){
+              if(e.lengthComputable){
+                req.totalLength = e.total;
+                req.loaded = e.loaded;
+                calcProgress();
+              }
+            });
+            xhr.onload = function(){
+              if(xhr.status == 200){
+                let url = URL.createObjectURL(xhr.response);
+                req.onLoad(url);
+              }
+            }
+            xhr.open("GET", req.src, true);
+            xhr.send();
+          }
+        }
+      });
+    </script>
+
+    <style>
+        html {
+            position: fixed;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        @font-face {
+            font-family: 'NuggetRoyale';
+            src: url('NuggetRoyale.woff2') format('woff2'), url('NuggetRoyale.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        #loadScreen {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 100;
+            background: radial-gradient(circle at 40% 40%, #38b6ff 0%, #005cfa 80%);
+            background-size: cover;
+            transition: transform 0.5s, opacity 0.5s, visibility 0.5s;
+        }
+
+        #loadScreen.img1 {
+            background-image: url(img/loadingScreen/blue.webp);
+            background-image: url(img/loadingScreen/blue.webp), radial-gradient(circle at 40% 40%, #38b6ff 0%, #005cfa 80%);
+            background-position: bottom left;
+        }
+
+        #loadScreen.img2 {
+            background-image: url(img/loadingScreen/orange.webp);
+            background-image: url(img/loadingScreen/orange.webp), radial-gradient(circle at 40% 40%, #ffca7f 0%, #ffa82f 80%);
+            background-position: bottom right;
+        }
+
+        #loadScreen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.1);
+        }
+
+        #loadScreenLogo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 36vw;
+            height: 16vw;
+            max-height: 80%;
+            background: url(img/NuggetRoyaleLogo.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #loadScreenLogo.right {
+            left: 75%;
+        }
+
+        #loadScreenLogo.left {
+            left: 25%;
+        }
+
+        #progressBarContainer {
+            width: 250px;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 110%);
+            border-radius: 15px;
+            box-shadow: inset 0px 0px 17px #00000038;
+            padding: 5px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        #progressBar {
+            width: 0%;
+            min-width: 20px;
+            height: 100%;
+            border-radius: 15px;
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, #fec256 10px, #fec256 20px), #ffa000;
+            background-size: 28.3px 30px;
+            box-shadow: inset 0px -10px 15px -8px #000000a6, inset 0px 8px 20px -8px #ffffff, 0px 4px 18px #00000063;
+            animation: progressBarAnim 1s infinite linear;
+            transition: width 0.5s;
+        }
+
+        @keyframes progressBarAnim {
+            from {
+                background-position-x: 0px;
+            }
+
+            to {
+                background-position-x: 28.3px;
+            }
+        }
+
+        @media(max-aspect-ratio: 40/31) {
+
+            #loadScreenLogo.left,
+            #loadScreenLogo.right {
+                width: 0;
+                left: 50%;
+                height: 100%;
+                max-height: 100%;
+            }
+
+            #loadScreenLogo.left #progressBarContainer,
+            #loadScreenLogo.right #progressBarContainer {
+                transform: translate(-50%, -20px);
+            }
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <meta name="description"
+        content="Possibly the weirdest web game you'll ever play! Nugget Royale is an MMO from Pelican Party Studios, that you can play for free in your browser. Be the chicken not the nugget.">
+    <meta name="keywords"
+        content="nugget, royale, chicken, battleroyale, battle royale, free game, gaming, online, combat, survival, free, collect, hats, unluck, last on stadning, chick, balance, jump, dash, push, mmo, winner, chicken dinner, f2p">
+    <link rel="canonical" href="https://nuggetroyale.io">
+
+    <!--pwa stuff-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#38b6ff">
+    <!-- <link rel="alternate" href="android-app://co.pelicanparty.nuggetroyale/https/nuggetroyale.io" /> -->
+    <!-- <meta name="apple-itunes-app" content="app-id=[app id here]"> -->
+
+    <!--open graph stuff-->
+    <meta property="og:title" content="Nugget Royale">
+    <meta property="og:description"
+        content="Possibly the weirdest web game you'll ever play! Nugget Royale is an MMO from Pelican Party Studios, that you can play for free in your browser. Be the chicken not the nugget.">
+    <meta property="fb:app_id" content="371757996756993">
+    <meta property="og:url" content="https://nuggetroyale.io">
+    <meta property="og:image" content="https://nuggetroyale.io/img/thumb.png">
+    <meta property="og:type" content="game">
+    <link rel="image_src" href="https://nuggetroyale.io/img/thumb.png">
+
+    <!--twitter stuff-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@NuggetRoyale">
+    <meta name="twitter:title" content="Nugget Royale">
+    <meta name="twitter:description"
+        content="Possibly the weirdest web game you'll ever play! Nugget Royale is an MMO from Pelican Party Studios, that you can play for free in your browser. Be the chicken not the nugget.">
+    <meta name="twitter:image" content="https://nuggetroyale.io/img/thumb.png">
+
+    <script type="application/ld+json">
+        {"@context":"http://schema.org","@type":"Videogame","name":"nuggetroyale.io","url":"http://nuggetroyale.io","sameAs":["https://twitter.com/NuggetRoyale","https://www.facebook.com/NuggetRoyaleOfficial/","https://www.reddit.com/r/nuggetroyale","https://www.youtube.com/channel/UCc3cUb5LU2CVB5z5Td12fFw/featured","https://www.instagram.com/nuggetroyale/"],"image":"https://nuggetroyale.io/brandingAssets/Nugget_Royale_poster_small.png","screenshot":"https://nuggetroyale.io/brandingAssets/screenshots/NuggetRoyale_screenShot_1.PNG","description":"Possibly the weirdest web game you'll ever play! Nugget Royale is an MMO from Pelican Party Studios, that you can play for free in your browser. Be the chicken not the nugget.","inLanguage":["English"],"genre":["MMO","Massively multiplayer online","RTS","Real-time strategy","Casual game"],"creator":{"@type":"Organization","name":"Pelican Party Studios","url":"pelicanparty.co"},"gamePlatform":"webgame","applicationCategory":["Game","webgame","GameApplication"],"operatingSystem":["Windows","OSX","Linux"],"aggregateRating":{"ratingValue":"9/10","ratingCount":100}}
+    </script>
+</head>
+
+<body style="overflow:hidden;">
+    <div id="loadScreen" class="img1">
+        <div id="loadScreenLogo">
+            <div id="progressBarContainer">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
