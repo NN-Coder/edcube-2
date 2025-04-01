@@ -6,9 +6,10 @@ The following versions of EdCube Hub are being supported with security and featu
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.2.8   | :white_check_mark: |
+| 1.4.2   | :white_check_mark: |
+| 1.3.6   | :white_check_mark: |
 | 1.2.7   | :white_check_mark:                |
-| 1.2.6   | :white_check_mark: |
+| 1.2.6     | :x:                |
 | < 1.1.6   | :x:                |
 
 ## Reporting a Vulnerability
