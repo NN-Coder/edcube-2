@@ -1,0 +1,1266 @@
+(function(zonevars) {
+	var zonemasters = zonevars.zonemasters;
+	var top_loc="",top_href="",top_hash="";
+	function getQueryHash() {
+		top_hash = (top_hash=top_href.match(/[\?\&]cpmstarhash=([^\&]*)/))==null?"":"#"+top_hash[1];		
+	}
+	try { top_loc=window.top.location; top_href=top_loc.href; top_hash=top_loc.hash; } catch(err) {
+		top_href = window.document.referrer;
+		getQueryHash();
+	}
+	if(!top_hash) getQueryHash();
+
+    var x=(10+((x*7)%26)).toString(36)+(x=window.location.href.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>1},0));
+	var y=window.location.href.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>1},0);y=(10+((y*7)%26)).toString(36)+y.toString(36);
+	var z=window.location.href.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>0},0);z=(10+((z*7)%26)).toString(36)+z.toString(36);
+	var q=window.location.href.split('#')[0].split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>1},0);q=(10+((q*7)%26)).toString(36)+q.toString(36);
+	var cpmstarx="cpmstarx";
+	if(window[x]) window[y] = window[x];
+	if(window[y]) window[z] = window[y];
+	if(window[z]) window[q] = window[z];
+	if(window[q]) window[cpmstarx] = window[q];
+    
+    var dev = top_hash == "#cpmstarDev";
+	var staging = (top_hash == "#cpmstarStaging" || top_hash == "#urlzing");
+	if(typeof window[cpmstarx]!=="object") window[x] = window[y] = window[z] = window[q] = window[cpmstarx] = {};
+	
+	if(typeof(window[cpmstarx].zonevars)==="object") return;
+	window[cpmstarx].zonevars = zonevars;
+
+	var ver = "1186";
+	window[cpmstarx].zonevars.ver = ver;
+
+
+	if(top_hash == "#urlzing") {
+		var qs = new URLSearchParams(window.location.search);
+		if(qs.has('cpmstarDev')) {
+			dev = true;
+		}
+	}
+
+	for(var i=0; i<zonemasters.length; i++) { //Insert all the zonemasters
+		var zonemasterobj = (typeof zonemasters[i]==="string")?{path:'/cached/zonemasters/'+zonemasters[i]}:zonemasters[i];
+
+		var s = document.createElement('script'); 
+		s.type = 'text/javascript'; 
+		s.async = true;
+		
+		var proto = (window.location.protocol == "http:")?"http:":"https:";
+		if(zonemasterobj.host == null) {            
+			if(dev) zonemasterobj.host = "dev.server.cpmstar.com";
+			else if(staging) zonemasterobj.host = "staging.server.cpmstar.com";
+			else if(proto == "https:") zonemasterobj.host = "ssl.cdne.cpmstar.com";
+			else zonemasterobj.host = "cdn.cpmstar.com";
+		}else{
+			if(staging) {
+				if(zonevars.jbcheck) zonevars.jbcheck.host = "staging.urlzing.com";				
+				zonemasterobj.host = "staging.urlzing.com"; 				
+			}
+		}
+		
+		s.src = proto + "//" + zonemasterobj.host + zonemasterobj.path + "?ver="+ver;
+		var s2=document.getElementsByTagName('script')[0];
+		s2.parentNode.insertBefore(s, s2);
+	}
+})(
+{
+  "zonemasters": [
+    "mobilemodules.js",
+    {
+      "path": "/cached/zonemasters/cpmstarjsgameapi.js",
+      "api": "game"
+    }
+  ],
+  "requests": {
+    "hb": {
+      "kind": "hb",
+      "pbjsfile": "starprebid.js",
+      "PREBID_TIMEOUT": 3000,
+      "adUnits": [
+        {
+          "bids": [
+            {
+              "bidder": "awesomeads",
+              "params": {
+                "endpoint": "proxy",
+                "width": "300",
+                "height": "250",
+                "placementId": "66559",
+                "ip": "%%IP%%"
+              },
+              "campaignid": 470046,
+              "campaignids": {
+                "300x250": 470046
+              }
+            }
+          ],
+          "mediaTypes": {
+            "video": {
+              "playerSize": [
+                960,
+                540
+              ],
+              "context": "instream"
+            }
+          },
+          "fallback": {
+            "kind": "video",
+            "poolid": 84813,
+            "vast": true
+          },
+          "code": "instream"
+        },
+        {
+          "bids": [
+            {
+              "bidder": "lunamediahb",
+              "params": {
+                "pubid": "4aa4592beb745ebbe718977e2b5fb59e",
+                "placementId": "6"
+              },
+              "campaignid": 465835,
+              "campaignids": {
+                "728x90": 465835
+              }
+            }
+          ],
+          "mediaTypes": {
+            "banner": {
+              "sizes": [
+                [
+                  728,
+                  90
+                ],
+                [
+                  800,
+                  100
+                ],
+                [
+                  970,
+                  90
+                ],
+                [
+                  320,
+                  50
+                ],
+                [
+                  300,
+                  50
+                ],
+                [
+                  216,
+                  36
+                ]
+              ]
+            }
+          },
+          "fallback": {
+            "poolid": 84814
+          },
+          "code": "anchor"
+        },
+        {
+          "bids": [
+            {
+              "bidder": "consumable",
+              "params": {
+                "unitId": "6864",
+                "unitName": "cnsmbl-audio-300x250-slider",
+                "zoneIds": [
+                  2002342
+                ],
+                "siteId": "2000865",
+                "networkId": "9969"
+              },
+              "campaignid": 446168,
+              "campaignids": {
+                "300x250": 446168
+              }
+            },
+            {
+              "bidder": "lunamediahb",
+              "params": {
+                "pubid": "4aa4592beb745ebbe718977e2b5fb59e",
+                "placementId": "5"
+              },
+              "campaignid": 465180,
+              "campaignids": {
+                "300x250": 465180
+              }
+            },
+            {
+              "bidder": "amx",
+              "params": {
+                "tagId": "Y3Btc3Rhci5jb20",
+                "adUnitId": "465940"
+              },
+              "campaignid": "465940",
+              "campaignids": {
+                "300x250": 465940
+              }
+            },
+            {
+              "bidder": "appnexus",
+              "params": {
+                "placementId": "20934652"
+              },
+              "campaignid": 466305,
+              "campaignids": {
+                "300x250": 466305
+              }
+            },
+            {
+              "bidder": "onemobile",
+              "params": {
+                "dcn": "8a969d310177773ab64b3af733070007",
+                "pos": "8a969d310177773ab64b3af87bbf0009"
+              },
+              "campaignid": 466307,
+              "campaignids": {
+                "300x250": 466307
+              }
+            },
+            {
+              "bidder": "pubmatic",
+              "params": {
+                "publisherId": "160251",
+                "adSlot": "3465816"
+              },
+              "campaignid": 466557,
+              "campaignids": {
+                "300x250": 466557
+              }
+            },
+            {
+              "bidder": "richaudience",
+              "params": {
+                "pid": "0VyxBYyMVB",
+                "supplyType": "site"
+              },
+              "campaignid": 466563,
+              "campaignids": {
+                "300x250": 466563
+              }
+            },
+            {
+              "bidder": "openx",
+              "params": {
+                "delDomain": "cpmstar-d.openx.net",
+                "unit": "543897084"
+              },
+              "campaignid": 466684,
+              "campaignids": {
+                "300x250": 466684
+              }
+            },
+            {
+              "bidder": "rhythmone",
+              "params": {
+                "placementId": "227023",
+                "zone": "1r",
+                "path": "mvo"
+              },
+              "campaignid": 466744,
+              "campaignids": {
+                "300x250": 466744
+              }
+            },
+            {
+              "bidder": "rubicon",
+              "params": {
+                "accountId": "23330",
+                "siteId": "368504",
+                "zoneId": "2006990"
+              },
+              "campaignid": "467472",
+              "campaignids": {
+                "300x250": 467472
+              }
+            },
+            {
+              "bidder": "oftmedia",
+              "params": {
+                "placementId": "21423293"
+              },
+              "campaignid": 469039,
+              "campaignids": {
+                "300x250": 469039
+              }
+            },
+            {
+              "bidder": "sharethrough",
+              "params": {
+                "pkey": "N6McSZ4ZY11aTH1YFcptJ8eh"
+              },
+              "campaignid": "469299",
+              "campaignids": {
+                "300x250": 469299
+              }
+            },
+            {
+              "bidder": "awesomeads",
+              "params": {
+                "endpoint": "proxy",
+                "width": "300",
+                "height": "250",
+                "placementId": "58468",
+                "ip": "%%IP%%"
+              },
+              "campaignid": 469807,
+              "campaignids": {
+                "300x250": 469807
+              }
+            },
+            {
+              "bidder": "awesomeads",
+              "params": {
+                "endpoint": "proxy",
+                "width": "300",
+                "height": "250",
+                "placementId": "66559",
+                "ip": "%%IP%%"
+              },
+              "campaignid": 470046,
+              "campaignids": {
+                "300x250": 470046
+              }
+            },
+            {
+              "bidder": "nobid",
+              "params": {
+                "siteId": "22451380291"
+              },
+              "campaignid": 471594,
+              "campaignids": {
+                "300x250": 471594
+              }
+            },
+            {
+              "bidder": "onetag",
+              "params": {
+                "pubId": "753930a353d6990",
+                "ext": {
+                  "placement_name": "473437"
+                }
+              },
+              "campaignid": "473437",
+              "campaignids": {
+                "300x250": 473437
+              }
+            }
+          ],
+          "mediaTypes": {
+            "banner": {
+              "sizes": [
+                [
+                  300,
+                  250
+                ]
+              ]
+            }
+          },
+          "fallback": {
+            "poolid": 84816,
+            "width": 300,
+            "height": 250
+          },
+          "code": "/JustBuild.lol_[IO]/$84816",
+          "gamFilters": [
+            {
+              "type": "Country",
+              "data": "WORLDWIDE",
+              "exclude": true
+            },
+            {
+              "type": "Domain",
+              "data": "1v1.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justbuild.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justfall.lol",
+              "exclude": false
+            },
+            {
+              "type": "Param",
+              "data": "gampb=1",
+              "exclude": true
+            },
+            {
+              "type": "Param",
+              "data": "json=c_o",
+              "exclude": true
+            }
+          ],
+          "gamAdUnitCode": "justfall300x250",
+          "gamCampaignid": 466309,
+          "gamPageUrl": "justfall.lol",
+          "gamDiscrep": 0.25138988093629183,
+          "gamDiscrepGross": 9.621830999999998,
+          "gamDiscrepLocalGross": 38.274535809332754
+        },
+        {
+          "bids": [
+            {
+              "bidder": "consumable",
+              "params": {
+                "unitId": "6863",
+                "unitName": "cnsmbl-audio-728x90-slider",
+                "zoneIds": [
+                  2002341
+                ],
+                "siteId": "2000865",
+                "networkId": "9969"
+              },
+              "campaignid": 446167,
+              "campaignids": {
+                "728x90": 446167
+              }
+            },
+            {
+              "bidder": "lunamediahb",
+              "params": {
+                "pubid": "4aa4592beb745ebbe718977e2b5fb59e",
+                "placementId": "6"
+              },
+              "campaignid": 465835,
+              "campaignids": {
+                "728x90": 465835
+              }
+            },
+            {
+              "bidder": "amx",
+              "params": {
+                "tagId": "Y3Btc3Rhci5jb20",
+                "adUnitId": "465936"
+              },
+              "campaignid": "465936",
+              "campaignids": {
+                "728x90": 465936
+              }
+            },
+            {
+              "bidder": "appnexus",
+              "params": {
+                "placementId": "20934651"
+              },
+              "campaignid": 466303,
+              "campaignids": {
+                "728x90": 466303
+              }
+            },
+            {
+              "bidder": "onemobile",
+              "params": {
+                "dcn": "8a969d310177773ab64b3af733070007",
+                "pos": "8a9690b20177773aba6a3af81bc0000c"
+              },
+              "campaignid": 466306,
+              "campaignids": {
+                "728x90": 466306
+              }
+            },
+            {
+              "bidder": "pubmatic",
+              "params": {
+                "publisherId": "160251",
+                "adSlot": "3465815"
+              },
+              "campaignid": 466558,
+              "campaignids": {
+                "728x90": 466558
+              }
+            },
+            {
+              "bidder": "richaudience",
+              "params": {
+                "pid": "dFBPf3DaJN",
+                "supplyType": "site"
+              },
+              "campaignid": 466564,
+              "campaignids": {
+                "728x90": 466564
+              }
+            },
+            {
+              "bidder": "openx",
+              "params": {
+                "delDomain": "cpmstar-d.openx.net",
+                "unit": "543897083"
+              },
+              "campaignid": 466685,
+              "campaignids": {
+                "728x90": 466685
+              }
+            },
+            {
+              "bidder": "rhythmone",
+              "params": {
+                "placementId": "227023",
+                "zone": "1r",
+                "path": "mvo"
+              },
+              "campaignid": 466745,
+              "campaignids": {
+                "728x90": 466745
+              }
+            },
+            {
+              "bidder": "rubicon",
+              "params": {
+                "accountId": "23330",
+                "siteId": "368504",
+                "zoneId": "2006990"
+              },
+              "campaignid": "467471",
+              "campaignids": {
+                "728x90": 467471
+              }
+            },
+            {
+              "bidder": "oftmedia",
+              "params": {
+                "placementId": "21423293"
+              },
+              "campaignid": 469040,
+              "campaignids": {
+                "728x90": 469040
+              }
+            },
+            {
+              "bidder": "sharethrough",
+              "params": {
+                "pkey": "QUgmFNU7fdKFBN2h8PNudc21"
+              },
+              "campaignid": "469296",
+              "campaignids": {
+                "728x90": 469296
+              }
+            }
+          ],
+          "mediaTypes": {
+            "banner": {
+              "sizes": [
+                [
+                  728,
+                  90
+                ]
+              ]
+            }
+          },
+          "fallback": {
+            "poolid": 84817,
+            "width": 728,
+            "height": 90
+          },
+          "code": "/JustBuild.lol_[IO]/$84817",
+          "gamFilters": [
+            {
+              "type": "Country",
+              "data": "WORLDWIDE",
+              "exclude": true
+            },
+            {
+              "type": "Domain",
+              "data": "1v1.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justbuild.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justfall.lol",
+              "exclude": false
+            },
+            {
+              "type": "Param",
+              "data": "gampb=1",
+              "exclude": true
+            },
+            {
+              "type": "Param",
+              "data": "json=c_o",
+              "exclude": true
+            }
+          ],
+          "gamAdUnitCode": "justfall728x90",
+          "gamCampaignid": 466308,
+          "gamPageUrl": "justfall.lol",
+          "gamDiscrep": 1,
+          "gamDiscrepGross": 196.44889999999998,
+          "gamDiscrepLocalGross": 222.41350263358493
+        },
+        {
+          "bids": [
+            {
+              "bidder": "consumable",
+              "params": {
+                "unitId": "6864",
+                "unitName": "cnsmbl-audio-300x250-slider",
+                "zoneIds": [
+                  2002342
+                ],
+                "siteId": "2000865",
+                "networkId": "9969"
+              },
+              "campaignid": 446168,
+              "campaignids": {
+                "300x250": 446168
+              }
+            },
+            {
+              "bidder": "lunamediahb",
+              "params": {
+                "pubid": "4aa4592beb745ebbe718977e2b5fb59e",
+                "placementId": "5"
+              },
+              "campaignid": 465180,
+              "campaignids": {
+                "300x250": 465180
+              }
+            },
+            {
+              "bidder": "amx",
+              "params": {
+                "tagId": "Y3Btc3Rhci5jb20",
+                "adUnitId": "465940"
+              },
+              "campaignid": "465940",
+              "campaignids": {
+                "300x250": 465940
+              }
+            },
+            {
+              "bidder": "appnexus",
+              "params": {
+                "placementId": "20934652"
+              },
+              "campaignid": 466305,
+              "campaignids": {
+                "300x250": 466305
+              }
+            },
+            {
+              "bidder": "onemobile",
+              "params": {
+                "dcn": "8a969d310177773ab64b3af733070007",
+                "pos": "8a969d310177773ab64b3af87bbf0009"
+              },
+              "campaignid": 466307,
+              "campaignids": {
+                "300x250": 466307
+              }
+            },
+            {
+              "bidder": "pubmatic",
+              "params": {
+                "publisherId": "160251",
+                "adSlot": "3465816"
+              },
+              "campaignid": 466557,
+              "campaignids": {
+                "300x250": 466557
+              }
+            },
+            {
+              "bidder": "richaudience",
+              "params": {
+                "pid": "0VyxBYyMVB",
+                "supplyType": "site"
+              },
+              "campaignid": 466563,
+              "campaignids": {
+                "300x250": 466563
+              }
+            },
+            {
+              "bidder": "openx",
+              "params": {
+                "delDomain": "cpmstar-d.openx.net",
+                "unit": "543897084"
+              },
+              "campaignid": 466684,
+              "campaignids": {
+                "300x250": 466684
+              }
+            },
+            {
+              "bidder": "rhythmone",
+              "params": {
+                "placementId": "227023",
+                "zone": "1r",
+                "path": "mvo"
+              },
+              "campaignid": 466744,
+              "campaignids": {
+                "300x250": 466744
+              }
+            },
+            {
+              "bidder": "rubicon",
+              "params": {
+                "accountId": "23330",
+                "siteId": "368504",
+                "zoneId": "2006990"
+              },
+              "campaignid": "467472",
+              "campaignids": {
+                "300x250": 467472
+              }
+            },
+            {
+              "bidder": "oftmedia",
+              "params": {
+                "placementId": "21423293"
+              },
+              "campaignid": 469041,
+              "campaignids": {
+                "300x250": 469041
+              }
+            },
+            {
+              "bidder": "sharethrough",
+              "params": {
+                "pkey": "N6McSZ4ZY11aTH1YFcptJ8eh"
+              },
+              "campaignid": "469299",
+              "campaignids": {
+                "300x250": 469299
+              }
+            },
+            {
+              "bidder": "awesomeads",
+              "params": {
+                "endpoint": "proxy",
+                "width": "300",
+                "height": "250",
+                "placementId": "66559",
+                "ip": "%%IP%%"
+              },
+              "campaignid": 470046,
+              "campaignids": {
+                "300x250": 470046
+              }
+            },
+            {
+              "bidder": "nobid",
+              "params": {
+                "siteId": "22451380291"
+              },
+              "campaignid": 471594,
+              "campaignids": {
+                "300x250": 471594
+              }
+            },
+            {
+              "bidder": "onetag",
+              "params": {
+                "pubId": "753930a353d6990",
+                "ext": {
+                  "placement_name": "473437"
+                }
+              },
+              "campaignid": "473437",
+              "campaignids": {
+                "300x250": 473437
+              }
+            }
+          ],
+          "mediaTypes": {
+            "banner": {
+              "sizes": [
+                [
+                  300,
+                  250
+                ]
+              ]
+            }
+          },
+          "fallback": {
+            "poolid": 85074,
+            "width": 300,
+            "height": 250
+          },
+          "code": "/JustBuild.lol_[IO]/$85074",
+          "gamFilters": [
+            {
+              "type": "Country",
+              "data": "WORLDWIDE",
+              "exclude": true
+            },
+            {
+              "type": "Domain",
+              "data": "1v1.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justbuild.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justfall.lol",
+              "exclude": false
+            },
+            {
+              "type": "Param",
+              "data": "gampb=1",
+              "exclude": true
+            },
+            {
+              "type": "Param",
+              "data": "json=c_o",
+              "exclude": true
+            }
+          ],
+          "gamAdUnitCode": "justfall300x250B",
+          "gamCampaignid": 467301,
+          "gamPageUrl": "justfall.lol",
+          "gamDiscrep": 0.2711228525458551,
+          "gamDiscrepGross": 8.393658999999998,
+          "gamDiscrepLocalGross": 30.958876838242084
+        },
+        {
+          "bids": [
+            {
+              "bidder": "appnexus",
+              "params": {
+                "placementId": "21230679"
+              },
+              "campaignid": 467302,
+              "campaignids": {
+                "300x600": 467302
+              }
+            },
+            {
+              "bidder": "onemobile",
+              "params": {
+                "dcn": "8a969d310177773ab64b3af733070007",
+                "pos": "8a9694390178783c4ccf4114664a021e"
+              },
+              "campaignid": 467303,
+              "campaignids": {
+                "300x600": 467303
+              }
+            },
+            {
+              "bidder": "richaudience",
+              "params": {
+                "pid": "0Szy8yvZsc",
+                "supplyType": "site"
+              },
+              "campaignid": 467304,
+              "campaignids": {
+                "300x600": 467304
+              }
+            },
+            {
+              "bidder": "rhythmone",
+              "params": {
+                "placementId": "227023",
+                "zone": "1r",
+                "path": "mvo"
+              },
+              "campaignid": 467305,
+              "campaignids": {
+                "300x600": 467305
+              }
+            },
+            {
+              "bidder": "openx",
+              "params": {
+                "delDomain": "cpmstar-d.openx.net",
+                "unit": "543993717"
+              },
+              "campaignid": 467306,
+              "campaignids": {
+                "300x600": 467306
+              }
+            },
+            {
+              "bidder": "amx",
+              "params": {
+                "tagId": "Y3Btc3Rhci5jb20",
+                "adUnitId": "467571"
+              },
+              "campaignid": "467571",
+              "campaignids": {
+                "300x600": 467571
+              }
+            },
+            {
+              "bidder": "rubicon",
+              "params": {
+                "accountId": "23330",
+                "siteId": "368504",
+                "zoneId": "2006990"
+              },
+              "campaignid": "467676",
+              "campaignids": {
+                "300x600": 467676
+              }
+            },
+            {
+              "bidder": "consumable",
+              "params": {
+                "unitId": "10954",
+                "unitName": "cnsmbl-audio-300x600",
+                "zoneIds": [
+                  2005898
+                ],
+                "siteId": "2000865",
+                "networkId": "9969"
+              },
+              "campaignid": 468264,
+              "campaignids": {
+                "300x600": 468264
+              }
+            },
+            {
+              "bidder": "sharethrough",
+              "params": {
+                "pkey": "8vctAHaPvG6NGLBE8suZpqD5"
+              },
+              "campaignid": "469301",
+              "campaignids": {
+                "300x600": 469301
+              }
+            },
+            {
+              "bidder": "nobid",
+              "params": {
+                "siteId": "22451380291"
+              },
+              "campaignid": 471593,
+              "campaignids": {
+                "300x600": 471593
+              }
+            },
+            {
+              "bidder": "onetag",
+              "params": {
+                "pubId": "753930a353d6990",
+                "ext": {
+                  "placement_name": "473438"
+                }
+              },
+              "campaignid": "473438",
+              "campaignids": {
+                "300x600": 473438
+              }
+            },
+            {
+              "bidder": "awesomeads",
+              "params": {
+                "endpoint": "proxy",
+                "width": "300",
+                "height": "600",
+                "placementId": "78975",
+                "ip": "%%IP%%"
+              },
+              "campaignid": 474918,
+              "campaignids": {
+                "300x600": 474918
+              }
+            }
+          ],
+          "mediaTypes": {
+            "banner": {
+              "sizes": [
+                [
+                  300,
+                  600
+                ]
+              ]
+            }
+          },
+          "fallback": {
+            "poolid": 85075,
+            "width": 300,
+            "height": 600
+          },
+          "code": "/JustBuild.lol_[IO]/$85075",
+          "gamFilters": [
+            {
+              "type": "Country",
+              "data": "WORLDWIDE",
+              "exclude": true
+            },
+            {
+              "type": "Domain",
+              "data": "1v1.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justbuild.lol",
+              "exclude": false
+            },
+            {
+              "type": "Domain",
+              "data": "justfall.lol",
+              "exclude": false
+            },
+            {
+              "type": "Param",
+              "data": "gampb=1",
+              "exclude": true
+            },
+            {
+              "type": "Param",
+              "data": "json=c_o",
+              "exclude": true
+            }
+          ],
+          "gamAdUnitCode": "justfall300x600",
+          "gamCampaignid": 467300,
+          "gamPageUrl": "justfall.lol",
+          "gamDiscrep": 0.40661902115731013,
+          "gamDiscrepGross": 5.872482999999996,
+          "gamDiscrepLocalGross": 14.442224033902457
+        }
+      ],
+      "GAM": true,
+      "GAMCHILDNETWORKCODE": "21834398356",
+      "FAILSAFE_TIMEOUT": 3500,
+      "publisherid": 49986,
+      "bidderDiscreps": {
+        "google": {
+          "tagperadunit": true,
+          "totalgross": 5.872482999999996,
+          "totallocalgross": 14.442224033902457,
+          "discrep": 0.40661902115731013
+        },
+        "appnexus": {
+          "tagperadunit": true,
+          "totalgross": 0.019663,
+          "totallocalgross": 0.01466699991375208,
+          "discrep": 1.3406286299602121
+        },
+        "onemobile": {
+          "tagperadunit": true,
+          "totalgross": 5.986366,
+          "totallocalgross": 10.379134052391018,
+          "discrep": 0.5767693113686044
+        },
+        "richaudience": {
+          "tagperadunit": true,
+          "totalgross": 7.059329,
+          "totallocalgross": 3.38098996833447,
+          "discrep": 2.087947336761114
+        },
+        "rhythmone": {
+          "tagperadunit": false,
+          "totalgross": 124.39,
+          "totallocalgross": 98.89689641961172,
+          "discrep": 1.2577745561622384
+        },
+        "openx": {
+          "tagperadunit": true,
+          "totalgross": 124.39,
+          "totallocalgross": 98.89689641961172,
+          "discrep": 1
+        },
+        "amx": {
+          "tagperadunit": false,
+          "totalgross": 64.73051000000001,
+          "totallocalgross": 62.374141579596895,
+          "discrep": 1.0377779695355984
+        },
+        "rubicon": {
+          "tagperadunit": false,
+          "totalgross": 237.797,
+          "totallocalgross": 168.95632311395343,
+          "discrep": 1.4074465851131042
+        },
+        "consumable": {
+          "tagperadunit": false,
+          "totalgross": 68.68608,
+          "totallocalgross": 11.087124976218329,
+          "discrep": 6.195120930568595
+        },
+        "sharethrough": {
+          "tagperadunit": false,
+          "totalgross": 15.477929999999999,
+          "totallocalgross": 12.832035100012726,
+          "discrep": 1.2061944874188077
+        },
+        "nobid": {
+          "tagperadunit": false,
+          "totalgross": 15.477929999999999,
+          "totallocalgross": 12.832035100012726,
+          "discrep": 1
+        },
+        "onetag": {
+          "tagperadunit": false,
+          "totalgross": 1.4899999999999998,
+          "totallocalgross": 0.5693650009759585,
+          "discrep": 2.616950457871426
+        },
+        "awesomeads": {
+          "tagperadunit": false,
+          "totalgross": 1.4899999999999998,
+          "totallocalgross": 0.5693650009759585,
+          "discrep": 1
+        }
+      }
+    },
+    "instream": {
+      "kind": "json",
+      "vast": true,
+      "poolid": 84813
+    },
+    "anchor": {
+      "kind": "banner",
+      "poolid": 84814
+    },
+    "pageviews": {
+      "poolid": 84815
+    },
+    "banner300x250": {
+      "kind": "banner",
+      "poolid": 85074
+    },
+    "banner728x90": {
+      "kind": "banner",
+      "poolid": 84817
+    },
+    "banner300x600": {
+      "kind": "banner",
+      "poolid": 85075
+    }
+  },
+  "modules": [
+    {
+      "kind": "banner",
+      "info": {
+        "name": "anchor"
+      },
+      "conditions": {
+        "target": {
+          "kind": "replace",
+          "find": "$84814"
+        }
+      },
+      "options": {
+        "maxHeight": 100
+      },
+      "request": "hb",
+      "adUnitPath": "anchor"
+    },
+    {
+      "kind": "banner",
+      "info": {
+        "name": "POOL 84816"
+      },
+      "conditions": {
+        "target": {
+          "kind": "replace",
+          "find": "$84816"
+        }
+      },
+      "options": {
+        "maxHeight": 250,
+        "autorefresh": false,
+        "refreshrate": 120000,
+        "minrefreshrate": 120000
+      },
+      "request": "hb",
+      "adUnitPath": "/JustBuild.lol_[IO]/$84816"
+    },
+    {
+      "kind": "banner",
+      "info": {
+        "name": "POOL 84817"
+      },
+      "conditions": {
+        "target": {
+          "kind": "replace",
+          "find": "$84817"
+        }
+      },
+      "options": {
+        "maxHeight": 90,
+        "autorefresh": false,
+        "refreshrate": 120000,
+        "minrefreshrate": 120000
+      },
+      "request": "hb",
+      "adUnitPath": "/JustBuild.lol_[IO]/$84817"
+    },
+    {
+      "kind": "banner",
+      "info": {
+        "name": "POOL 85074"
+      },
+      "conditions": {
+        "target": {
+          "kind": "replace",
+          "find": "$85074"
+        }
+      },
+      "options": {
+        "maxHeight": 250,
+        "autorefresh": false,
+        "refreshrate": 120000,
+        "minrefreshrate": 120000
+      },
+      "request": "hb",
+      "adUnitPath": "/JustBuild.lol_[IO]/$85074"
+    },
+    {
+      "kind": "banner",
+      "info": {
+        "name": "POOL 85075"
+      },
+      "conditions": {
+        "target": {
+          "kind": "replace",
+          "find": "$85075"
+        }
+      },
+      "options": {
+        "maxHeight": 600,
+        "autorefresh": false,
+        "refreshrate": 120000,
+        "minrefreshrate": 120000
+      },
+      "request": "hb",
+      "adUnitPath": "/JustBuild.lol_[IO]/$85075"
+    }
+  ],
+  "options": {
+    "referrerRevshare": 1
+  },
+  "info": {
+    "id": 627,
+    "tags": [],
+    "zonepools": {
+      "84814": {
+        "module": "anchor"
+      },
+      "84816": {
+        "module": "POOL 84816"
+      },
+      "84817": {
+        "module": "POOL 84817"
+      },
+      "85074": {
+        "module": "POOL 85074"
+      },
+      "85075": {
+        "module": "POOL 85075"
+      }
+    }
+  }
+}
+);
