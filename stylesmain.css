@@ -48,21 +48,19 @@
 
         }
        
-        /* Set the height of the carousel */
         .carousel-item img {
           border-radius: 20px;
-          height: 600px; /* Adjust the height to make the images taller */
+          height: 600px; 
           width: 1180px;
-          object-fit: cover; /* Ensures the image fills the block */
+          object-fit: cover;
           border: 2px solid #00ffcc;
           box-shadow: 0px 0px 15px #00ffcc;
         }
       
-        /* Optional: set a larger width for the entire carousel */
         #myCarousel {
           border-radius: 20px;
           margin-top: 20px;
-          height: 600px; /* Adjust the height to make the images taller */
+          height: 600px; 
           width: 1180px;
         }
       
@@ -74,7 +72,7 @@
           top: 65%;
           transform: translateY(-50%);
           color: #fff;
-          background-color: rgba(0, 0, 0, 0.5); /* Adds a background for better readability */
+          background-color: rgba(0, 0, 0, 0.5); 
           padding: 10px;
           border-radius: 5px;
         }
@@ -126,9 +124,9 @@
 
         .button-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr)); /* Creates responsive columns */
-            gap: 20px; /* Space between buttons */
-            justify-items: center; /* Center align buttons horizontally */
+            grid-template-columns: repeat(2, minmax(0, 1fr)); 
+            gap: 20px;
+            justify-items: center; 
             margin: 50px 200px;
             text-align: center;
         }
@@ -145,7 +143,7 @@
             text-transform: uppercase;
             text-decoration: none;
             border-radius: 10px;
-            width: 45%; /* Make buttons stretch to fit their columns */
+            width: 45%;
             text-align: center;
             box-shadow: 0px 0px 15px #00ffcc;
             transition: all 0.3s ease-in-out;
@@ -161,16 +159,15 @@
 
             margin-top: 50px;
 
-            margin-bottom: 0px; /* Adds space before the footer */
+            margin-bottom: 0px;
         }
         .button-container2 {
 
             margin-top: 0px;
 
-            margin-bottom: 0px; /* Adds space before the footer */
+            margin-bottom: 0px; 
 
         }
-        /* Popup styling */
         #disclaimer-popup {
             position: fixed;
             top: 55%;
@@ -183,11 +180,11 @@
             box-shadow: 0px 0px 25px #ffcc00;
             border-radius: 15px;
             z-index: 1000;
-            display: none; /* Initially hidden */
+            display: none; 
             text-align: center;
             width: 80%;
-            max-height: 80%; /* Prevent it from getting too tall */
-            overflow-y: auto; /* Enable scrolling if content overflows */
+            max-height: 80%; 
+            overflow-y: auto; 
         }
 
         #disclaimer-popup h3 {
@@ -242,7 +239,6 @@
             color: #ff9900;
         }
 
-        /* Blurred and dimmed background */
         #page-blur {
             position: fixed;
             top: 0;
@@ -252,12 +248,11 @@
             background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(5px);
             z-index: 999;
-            display: none; /* Initially hidden */
+            display: none; 
         }
 
 
 
-        /* Footer styling */
 
         footer {
 
@@ -335,14 +330,13 @@
             z-index: 1000;
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Align vertically */
-            padding: 0px 50px; /* Reduce padding to fit better */
+            align-items: center; 
+            padding: 0px 50px;
             background-color: #111;
             box-shadow: 0px 0px 15px #00ffcc;
          }
 
 
-        /* Logo styling */
         .logo {
             margin-top: 0px;
             font-size: 1.8rem;
@@ -356,10 +350,9 @@
 
         }
 
-        /* Login & Signup Button Styling */
         .header-buttons {
              display: flex;
-             align-items: center; /* Align items vertically */
+             align-items: center; 
              gap: 20px;
          }
 
