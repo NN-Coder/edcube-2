@@ -1,53 +1,49 @@
 
         body {
-
             background-color: #1a1a1a;
-
             color: #00ffcc;
-
             font-family: 'Orbitron', sans-serif;
-
             margin: 0;
-
             padding: 0;
-
             text-align: center;
-
             min-height: 100vh;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: flex-start;
-
         }
 
-
-
         h2 {
-
             font-size: 3rem;
-
             color: #00ffcc;
-
             text-shadow: 0px 0px 10px #00ffcc;
-
             margin-top: 50px;
-
         }
         h3 {
 
             font-size: 2.6rem;
-
             color: #00ffcc;
-
             text-shadow: 0px 0px 10px #00ffcc;
-
             margin-top: 50px;
-
         }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr)); 
+            gap: 20px;
+            justify-items: center; 
+            margin: 50px 200px;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 50px;
+            margin-bottom: 0px;
+        }
+
        
+
+
+        /*carousel*/
         .carousel-item img {
           border-radius: 20px;
           height: 600px; 
@@ -56,14 +52,12 @@
           border: 2px solid #00ffcc;
           box-shadow: 0px 0px 15px #00ffcc;
         }
-      
         #myCarousel {
           border-radius: 20px;
           margin-top: 20px;
           height: 600px; 
           width: 1180px;
         }
-      
         .carousel-caption {
           position: absolute;
           margin-left: 18%;
@@ -77,6 +71,9 @@
           border-radius: 5px;
         }
       
+
+
+        /*game button*/
         .game-button {
             position: relative;
             display: inline-block;
@@ -90,7 +87,6 @@
             transition: all 0.3s ease-in-out;
             cursor: pointer;
         }
-
         .game-button:hover {
             border: 2px solid #ff00ff;
             box-shadow: 0px 0px 15 px #ff00ff;
@@ -100,11 +96,9 @@
             height: 100%;
             transition: all 0.3s ease-in-out;
         }
-
         .game-button:hover img {
             filter: blur(4px) brightness(0.7);
         }
-
         .game-button span {
             position: absolute;
             bottom: 10px;
@@ -117,57 +111,13 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
-
         .game-button:hover span {
             opacity: 1;
         }
 
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr)); 
-            gap: 20px;
-            justify-items: center; 
-            margin: 50px 200px;
-            text-align: center;
-        }
-
-        .otherlinks-button {
-            text-align: center;
-            display: inline-block;
-            margin: 20px;
-            padding: 20px 20px;
-            background-color: #333;
-            border: 2px solid #00ffcc;
-            color: #00ffcc;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 10px;
-            width: 45%;
-            text-align: center;
-            box-shadow: 0px 0px 15px #00ffcc;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .otherlinks-button:hover {
-            background-color: #ff00ff;
-            box-shadow: 0px 0px 25px #ff00ff;
-        }
 
 
-        .button-container {
-
-            margin-top: 50px;
-
-            margin-bottom: 0px;
-        }
-        .button-container2 {
-
-            margin-top: 0px;
-
-            margin-bottom: 0px; 
-
-        }
+        /* Disclaimer Popup */
         #disclaimer-popup {
             position: fixed;
             top: 55%;
@@ -186,17 +136,14 @@
             max-height: 80%; 
             overflow-y: auto; 
         }
-
         #disclaimer-popup h3 {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-
         #disclaimer-popup p {
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-
         #close-disclaimer,
         #disclaimer-close-btn {
             padding: 10px 30px;
@@ -209,12 +156,10 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
         #close-disclaimer:hover,
         #disclaimer-close-btn:hover {
             background-color: #ff9900;
         }
-
         #disclaimer-close-btn {
             position: absolute;
             top: 10px;
@@ -225,7 +170,6 @@
             border: none;
             cursor: pointer;
         }
-
         #disclaimer-more-info {
             display: block;
             margin-top: 10px;
@@ -234,11 +178,9 @@
             text-decoration: underline;
             cursor: pointer;
         }
-
         #disclaimer-more-info:hover {
             color: #ff9900;
         }
-
         #page-blur {
             position: fixed;
             top: 0;
@@ -250,80 +192,14 @@
             z-index: 999;
             display: none; 
         }
-
-
-
-
-        footer {
-
-            background-color: #111;
-
-            color: #cccccc;
-
-            padding: 20px 0;
-
-            text-align: center;
-
-            position: relative;
-
-            margin-top: 50px;
-
-            bottom: 0;
-
-            width: 100%;
-
-        }
-
-
-
-        footer a {
-
-            color: #00ffcc;
-
-            text-decoration: none;
-
-            margin: 0 10px;
-
-            transition: color 0.3s ease;
-
-        }
-
-
-
-        footer a:hover {
-
-            color: #ff00ff;
-
-        }
-
-
-
-        .social-icons a {
-
-            margin: 0 10px;
-
-        }
-
-
-
-        .social-icons i {
-
-            font-size: 1.5rem;
-
-        }
-
-
-
         .disclaimer {
-
             font-size: 0.9rem;
-
             color: #777;
             }
-        .otherlinkstext {
-            margin-bottom: 10px;
-            margin-top: 100px;
-        }
+
+
+
+        /*header*/
          header {
             position: sticky;
             top: 0;
@@ -335,8 +211,6 @@
             background-color: #111;
             box-shadow: 0px 0px 15px #00ffcc;
          }
-
-
         .logo {
             margin-top: 0px;
             font-size: 1.8rem;
@@ -349,14 +223,11 @@
             border-radius: 5px;
 
         }
-
         .header-buttons {
              display: flex;
              align-items: center; 
              gap: 20px;
          }
-
-
         .header-buttons a {
             padding: 10px 0px;
             color: #00ffcc;
@@ -365,8 +236,82 @@
             text-transform: uppercase;
             transition: background-color 0.3s ease-in-out;
         }
-
         .header-buttons a:hover {
             color: #ff00ff;
             text-shadow: 0px 0px 25px #ff00ff;
+        }
+
+
+
+        /*accordion for movies*/
+        .accordion {
+            width: 80%;
+            margin: 20px auto;
+            border: 2px solid #00ffcc;
+            border-radius: 12px;
+            background-color: #111;
+            box-shadow: 0px 0px 15px #00ffcc;
+            transition: all 0.3s ease;
+          }
+          .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.6rem;
+            color: #00ffcc;
+            transition: background 0.3s ease;
+          }
+          .accordion-header:hover {
+            background-color: #222;
+          }
+          .arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+          }
+          .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background-color: #1f1f1f;
+            color: #cccccc;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 1.2rem;
+          }
+          .accordion.active .accordion-content {
+            padding: 20px;
+            max-height: 500px;
+          }
+          .accordion.active .arrow {
+            transform: rotate(90deg);
+          }
+
+
+
+          /*footer*/
+        footer {
+            background-color: #111;
+            color: #cccccc;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            margin-top: 50px;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #00ffcc;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #ff00ff;
+        }
+        .social-icons a {
+            margin: 0 10px;
+        }
+        .social-icons i {
+            font-size: 1.5rem;
         }
