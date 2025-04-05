@@ -26,7 +26,7 @@
     });
 document.addEventListener('keydown', function(event) {
     if (event.key === '[') {
-        window.location.href = '../index.html'; // Replace with the actual URL
+        window.location.href = '../index.html'; 
     }
 });
 
