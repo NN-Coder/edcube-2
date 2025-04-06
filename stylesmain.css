@@ -251,6 +251,7 @@
             border-radius: 12px;
             background-color: #111;
             box-shadow: 0px 0px 15px #00ffcc;
+            overflow: hidden;
             transition: all 0.3s ease;
           }
           .accordion-header {
@@ -261,7 +262,14 @@
             align-items: center;
             font-size: 1.6rem;
             color: #00ffcc;
-            transition: background 0.3s ease;
+            background-color: #111;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transition: background-color 0.3s ease;
+          }
+          .accordion.active .accordion-header {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
           }
           .accordion-header:hover {
             background-color: #222;
@@ -282,6 +290,8 @@
           .accordion.active .accordion-content {
             padding: 20px;
             max-height: 500px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
           }
           .accordion.active .arrow {
             transform: rotate(90deg);
