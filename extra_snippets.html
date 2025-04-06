@@ -1,0 +1,41 @@
+ <!--<h2>Proxy</h2>
+    <script type="text/javascript">
+  var old = '';
+
+  function init() {
+    window.dynamicframe.document.write(' < embed id = "frame"
+        height = 100 % width = 100 % style = "display:none;position:absolute;top:0%;left:0%"
+        src = "https://google.com" > < \/embed> < script > onbeforeunload = (i) => 1; < \/script>'); window.dynamicframe.document.close(); window.buttons.document.write(' < style type = "text/css" > .expand {
+          position: absolute;top: 0 % ;left: 0 % ;width: 100 % ;height: 100 % ;
+        }.close {
+          border: none;margin: 0 px;padding: 0 px;
+        } < \/style> < form name = "f" > < textarea type = "text"
+        spellcheck = "false"
+        id = "url"
+        style = "color:ffffff;background-color:000000;"
+        class = "expand close"
+        name = "fi" > https: //google.com</textarea>
+        < /form>'); window.buttons.document.close(); update(); } function update() { var textarea = window.buttons.document.f.fi; var d = dynamicframe.document; if (old != textarea.value){ old = textarea.value; d.open(); d.write(` < embed height = 100 % width = 100 % style = "position:absolute;top:0%;left:0%"
+        src = "${textarea.value}" > < \/embed> < script > onbeforeunload = (i) => 1; < \/script>`); d.close(); } window.setTimeout(update, 150); } 
+</script>
+<frameset resizable="yes" rows="2.5%,*" onload="init();">
+<frame name="buttons" src="javascript:'';">
+  <frame name="dynamicframe" src="javascript:'';">
+</frameset>-->
+
+
+<script>
+     //news bar and news toggle
+     const toggleInput = document.getElementById('toggle');
+        const news_bar = document.getElementById("news-bar");
+
+        toggleInput.addEventListener('change', function() {
+            if (toggleInput.checked) {
+                news_bar.style.display = "block";
+                console.log("Toggle is ON");
+            } else {
+                news_bar.style.display = "none";
+                console.log("Toggle is OFF");
+            }
+        });
+</script>
