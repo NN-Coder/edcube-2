@@ -25,7 +25,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link href="stylesmain.css" rel="stylesheet" type="text/css" media="all">
-
+    
+    <style>
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+  
+      .accordion-content.open {
+        max-height: 500px; /* Adjust as needed */
+      }
+  
+      .scrollable-content {
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 10px;
+      }
+  
+      .accordion-header {
+        cursor: pointer;
+        user-select: none;
+      }
+  
+      .accordion-header .arrow {
+        float: right;
+        transition: transform 0.3s ease;
+      }
+  
+      .accordion-header.active .arrow {
+        transform: rotate(90deg);
+      }
+    </style>
 </head>
 
 <body>
@@ -149,11 +180,13 @@
           <span class="arrow">▶</span>
         </div>
         <div class="accordion-content">
-          <div class="button-container">
+          <div class="scrollable-content">
+          <div class="movies-container">
             <a href="/movies/avengers/theavengers.html" class="game-button"><img class="gameimg" src="/movie_images/avengers/theavengers.png" alt="The Avengers Cover"><span>The Avengers</span></a>
             <a href="/movies/avengers/avengers-ageofultron.html" class="game-button"><img class="gameimg" src="/movie_images/avengers/avengers-ageofultron.png" alt="Avengers: Age of Ultron Cover"><span>Avengers: Age of Ultron</span></a>
             <a href="/movies/avengers/avengers-infinitywar.html" class="game-button"><img class="gameimg" src="/movie_images/avengers/avengers-infinitywar.png" alt="Avengers: Infinity War Cover"><span>Avengers: Infinity War</span></a>
             <a href="/movies/avengers/avengers-endgame.html" class="game-button"><img class="gameimg" src="/movie_images/avengers/avengers-endgame.png" alt="Avengers: Endgame Cover"><span>Avengers: Endgame</span></a>
+          </div>
           </div>
       </div>
       </div>
@@ -164,7 +197,19 @@
           <span class="arrow">▶</span>
         </div>
         <div class="accordion-content">
-          <p>Coming Soon!</p>
+          <div class="scrollable-content">
+          <div class="movies-container">
+            <a href="/movies/starwars/thephantommenace.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/thephantommenace.png" alt="The Phantom Menace Cover"><span>The Phantom Menace</span></a>
+            <a href="/movies/starwars/attackoftheclones.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/attackoftheclones.png" alt="Attack of the Clones Cover"><span>Attack of the Clones</span></a>
+            <a href="/movies/starwars/revengeofthesith.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/revengeofthesith.png" alt="Revenge of the Sith Cover"><span>Revenge of the Sith</span></a>
+            <a href="/movies/starwars/anewhope.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/anewhope.png" alt="A New Hope Cover"><span>A New Hope</span></a>
+            <a href="/movies/starwars/theempirestrikesback.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/theempirestrikesback.png" alt="The Empire Strikes Back Cover"><span>The Empire Strikes Back</span></a>
+            <a href="/movies/starwars/thereturnofthejedi.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/thereturnofthejedi.png" alt="Return of the Jedi Cover"><span>The Return of the Jedi</span></a>
+            <a href="/movies/starwars/theforceawakens.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/theforceawakens.png" alt="The Force Awakens Cover"><span>The Force Awakens</span></a>
+            <a href="/movies/starwars/thelastjedi.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/thelastjedi.png" alt="The Last Jedi Cover"><span>The Last Jedi</span></a>
+            <a href="/movies/starwars/theriseofskywalker.html" class="game-button"><img class="gameimg" src="/movie_images/starwars/theriseofskywalker.png" alt="The Rise of Skywalker Cover"><span>The Rise of Skywalker</span></a>
+          </div>
+          </div>
         </div>
       </div>
     
@@ -174,11 +219,13 @@
           <span class="arrow">▶</span>
         </div>
         <div class="accordion-content">
-          <div class="button-container">
+          <div class="scrollable-content">
+          <div class="movies-container">
             <a href="/movies/despicableme/despicableme.html" class="game-button"><img class="gameimg" src="/movie_images/despicableme/despicableme.png" alt="Despicable Me Cover"><span>Despicable Me</span></a>
             <a href="/movies/despicableme/despicableme2.html" class="game-button"><img class="gameimg" src="/movie_images/despicableme/despicableme2.png" alt="Despicable Me 2 Cover"><span>Despicable Me 2</span></a>
             <a href="/movies/despicableme/despicableme3.html" class="game-button"><img class="gameimg" src="/movie_images/despicableme/despicableme3.png" alt="Despicable Me 3 Cover"><span>Despicable Me 3</span></a>
             <a href="/movies/despicableme/despicableme4.html" class="game-button"><img class="gameimg" src="/movie_images/despicableme/despicableme4.png" alt="Despicable Me 4 Cover"><span>Despicable Me 4</span></a>
+          </div>
           </div>
         </div>
       </div>
@@ -189,8 +236,15 @@
         accordions.forEach(acc => {
           const header = acc.querySelector('.accordion-header');
           header.addEventListener('click', () => {
-            acc.classList.toggle('active');
-          });
+  acc.classList.toggle('active');
+
+  if (acc.classList.contains('active')) {
+    // Slight delay to wait for expand animation
+    setTimeout(() => {
+      acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 200);
+  }
+});
         });
       </script>
 
@@ -315,7 +369,18 @@
         });
         
 </script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const arrow = header.querySelector('.arrow');
+  
+          content.classList.toggle('open');
+          header.classList.toggle('active');
+        });
+      });
+    </script>
 </body>
 
 </html>
