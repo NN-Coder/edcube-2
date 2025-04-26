@@ -26,6 +26,15 @@
     
     <link href="stylesmain.css" rel="stylesheet" type="text/css" media="all">
 
+    <script>
+      const allowedDomain = "epicube.codeberg.page/mainpage.html";
+    
+      const currentHost = window.location.hostname.replace(/^www\./, '');
+    
+      if (currentHost !== allowedDomain) {
+        window.location.href = "https://epicube.codeberg.page/mainpage.html";
+      }
+    </script>
 </head>
 
 <body>
