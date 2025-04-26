@@ -252,8 +252,15 @@
     <h2>Tools</h2>
     <a href="/tools/linewize-block-check.html">LineWize Block Checker</a>
 
-
-    <!-- Footer -->
+<h2>Extra Info</h2>
+<p>Quick Think: What's the square root of 4,489? Use the handy EdCulator to find out!</p>
+<p>Note: You have to type the number and then the root symbol.</p>
+<iframe style="margin: auto;"width="219" height="302" src="http://calculator-1.com/outdoor/?f=0274C8&r=666666" scrolling="no" frameborder="0"></iframe><br /><a href="https://calculator-1.com/"></a>
+  <p>One solved, enter the code below to recieve a unblock bypass!</p>
+  <input type="text" id="codeInput" placeholder="Enter code here...">
+  <button class="back-button"onclick="checkCode()">Submit</button>
+  <div id="message"></div>
+<!-- Footer -->
 
     <footer>
         <p>💡 Pro Tip! Use the hotkey "[" to quickly switch from any page to the EdCube learning page.</p>
@@ -384,6 +391,18 @@ document.getElementById('openProtected').addEventListener('click', (e) => {
     }
   });
         
+//67 troll
+function checkCode() {
+      const correctCode = "67";
+      const input = document.getElementById("codeInput").value.trim();
+      const messageDiv = document.getElementById("message");
+
+      if (input === correctCode) {
+        window.location.href = "https://www.youtube.com/watch?v=07xpV4ix2K8";
+      } else {
+        messageDiv.textContent = "Wrong Answer";
+      }
+    }
 
   //background
   const canvasEl = document.querySelector("canvas#neuro");
