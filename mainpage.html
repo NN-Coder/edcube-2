@@ -202,6 +202,8 @@
         
         <a href="/games/amongus.html" class="game-button"><img class="gameimg" src="/game_images/amongus.png" alt="Among Us Logo"><span>Among Us</span></a>
       
+        <a href="/games/basket-random.html" class="game-button"><img class="gameimg" src="/game_images/basket-random.png" alt="Basket Random Logo"><span>Basket Random</span></a>
+
         <a href="/games/bitlife.html" class="game-button"><img class="gameimg" src="/game_images/bitlife.png" alt="Bitlife Logo"><span>Bitlife</span></a>
       
         <a href="/games/drivemad.html" class="game-button"><img class="gameimg" src="/game_images/drivemad.png" alt="Drive Mad Logo"><span>Drive Mad</span></a>
@@ -393,19 +395,6 @@ document.getElementById('openProtected').addEventListener('click', (e) => {
     }
   });
         
-//67 troll
-function checkCode() {
-      const correctCode = "67";
-      const input = document.getElementById("codeInput").value.trim();
-      const messageDiv = document.getElementById("message");
-
-      if (input === correctCode) {
-        window.location.href = "https://www.youtube.com/watch?v=07xpV4ix2K8";
-      } else {
-        messageDiv.textContent = "Wrong Answer";
-      }
-    }
-
   //background
   const canvasEl = document.querySelector("canvas#neuro");
 const devicePixelRatio = Math.min(window.devicePixelRatio, 2);
