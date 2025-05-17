@@ -319,6 +319,37 @@
             transform: rotate(90deg);
           }
 
+          .accordion-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+        
+            .accordion-content.open {
+                max-height: 500px; 
+            }
+
+            .accordion-header:hover {
+                background-color: #ff00ff;
+            }
+        
+            .scrollable-content {
+                max-height: 400px;/* note to nn: Adjust the height*/
+                overflow-y: auto;
+                padding-right: 10px;
+            }
+        
+            .accordion-header {
+                cursor: pointer;
+                user-select: none;
+            }
+        
+            .accordion-header .arrow {
+                float: right;
+                transition: transform 0.3s ease;
+            }
+  
+
 
 
           /*footer*/

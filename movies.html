@@ -25,41 +25,7 @@
     
     <link href="stylesmain.css" rel="stylesheet" type="text/css" media="all">
     
-    <style>
-      .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-      }
-  
-      .accordion-content.open {
-        max-height: 500px; 
-      }
-
-      .accordion-header:hover {
-        background-color: #ff00ff;
-      }
-  
-      .scrollable-content {
-        max-height: 400px;/* note to nn: Adjust the height*/
-        overflow-y: auto;
-        padding-right: 10px;
-      }
-  
-      .accordion-header {
-        cursor: pointer;
-        user-select: none;
-      }
-  
-      .accordion-header .arrow {
-        float: right;
-        transition: transform 0.3s ease;
-      }
-  
-      .accordion-header.active .arrow {
-        transform: rotate(90deg);
-      }
-    </style>
+   
 </head>
 
 <body>
@@ -257,6 +223,16 @@
   }
 });
         });
+        
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const arrow = header.querySelector('.arrow');
+  
+          content.classList.toggle('open');
+          header.classList.toggle('active');
+        });
+      });
       </script>
 
 
@@ -381,17 +357,7 @@
         
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script>
-      document.querySelectorAll('.accordion-header').forEach(header => {
-        header.addEventListener('click', () => {
-          const content = header.nextElementSibling;
-          const arrow = header.querySelector('.arrow');
-  
-          content.classList.toggle('open');
-          header.classList.toggle('active');
-        });
-      });
-    </script>
+    
 </body>
 
 </html>
