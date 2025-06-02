@@ -10,7 +10,7 @@
     <meta property="og:site_name" content="EdCube">
     <meta property="og:description" content="Enhancing your in-browser gaming experience with lots of resource, games, and tools completely free.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="icons/edlogo.jpeg">
+    <meta property="og:image" content="https://electricube.codeberg.page/icons/edlogo.jpeg">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,7 +29,15 @@
 </head>
 
 <body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EZJ4RW4BH4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-EZJ4RW4BH4');
+</script>
   <!--background-->
   <canvas id="neuro"></canvas>
 
@@ -115,7 +123,7 @@
 
     </div>
     <header>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><div class="logo"><img src="logo.jpeg"></div></a>
+        ><div class="logo"><img src="logo.jpeg"></div>
 
         <div class="header-buttons" id="StickyHeader">
              <div class="popup-wrapper"><a style="text-decoration: none;" id="openProtected" href="#">Blank URL<img style="height: 15px; width: 15px; margin-left: 7px; margin-bottom: 5px;" src="icons/popup.png"></a></div>
@@ -134,30 +142,10 @@
               </nav>            
     </div>
     </header>
-   <!-- <div id="news-bar" class="sliding-news-bar">
-    <div class="sliding-news">
-        <h3>
-  Navigation bar coming to game pages soon!
-  <span style="margin-left: 200px;">Have a business inquiryt? Contact us at <a href="mailto:edcubestudios@yahoo.com">edcubestudios@yahoo.com.</a></span>
-  <span style="margin-left: 200px;">This website is completely open-source at <a href="https://github.com/edcubelearning/backup">GitHub.</a></span>
-  <span style="margin-left: 200px;">Pro Tip: Press the "[" key or "r" key on any page to be redirected to the learning page.</span>
-</h3>
-
-    </div>
-    </div>-->
+  
 
     <h2>Welcome to EdCube Gaming!</h2>
 
-    <!--<a href="#" class="back-button" id="openProtected">Open in about:blank</a>-->
-
-    <!--<h4>Alternate Links:</h4>
-    <p>Notice: The following links may not be updated as often as the <a href="https://excube.neocities.org">main site</a>.</p>
-    <a href="https://algebrahelp.neocities.org">algebrahelp.neocities.org</a>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>-->
     
     <h3 style="margin-bottom: 20px; margin-top: 50px;">Featured Games</h3>
     <div class="container-fluid" style="border-radius: 20px;">
@@ -313,40 +301,15 @@
     <a style="margin-top: 20px;"class="back-button" href="/tools/eaglercraft-servers.html">Eaglercraft Servers</a>
 
 
-<!-- Footer -->
 
     <footer>
         <p>💡 Pro Tip! Use the hotkey "[" to quickly switch from any page to the EdCube learning page.</p>
         <p>You can also use the hotkey "]" to go directly from the EdCube learning page to the game page.</p>
-        <!--<p>EdCube is massive... You know what else is massive? The LOOOOOOOW TAPER FADE!</p>-->
         <div class="social-icons">
-
-            <a href="https://x.com/edcubestudios" target="_blank"><i class="fab fa-twitter"></i></a>
-
-            <a href="https://www.facebook.com/profile.php?id=61565159837722" target="_blank"><i class="fab fa-facebook"></i></a>
-
-            <a href="https://www.instagram.com/edcubestudios/" target="_blank"><i class="fab fa-instagram"></i></a>
-
-            <a href="https://www.youtube.com/@edcubestudios" target="_blank"><i class="fab fa-youtube"></i></a>
 
             <a href="https://discord.gg/bxVNGNeP" target="_blank"><i class="fab fa-discord"></i></a>
 
             <a href="https://github.com/edcubelearning" target="_blank"><i class="fab fa-github"></i></a>
-
-            <a href="https://www.linkedin.com/in/edcube-studios-548469329/" target="_blank"><i class="fab fa-linkedin"></i></a>
-
-            <a href="https://pin.it/6fDRFcogp" target="_blank"><i class="fab fa-pinterest"></i></a>  
-
-            <a href="https://www.reddit.com/r/EdCubeStudios/" target="_blank"><i class="fab fa-reddit"></i></a>
-
-            <a href="https://www.twitch.tv/edcubestudios" target="_blank"><i class="fab fa-twitch"></i></a>
-
-            <a href="https://www.flickr.com/photos/201435764@N07/" target="_blank"><i class="fab fa-flickr"></i></a>
-
-            <a href="https://www.tumblr.com/edcubestudios" target="_blank"><i class="fab fa-tumblr"></i></a>
-            
-            <link rel="me" href="https://mastodon.social/@edcube"></link>
-
 
 
         </div>
@@ -427,14 +390,14 @@ document.getElementById('openProtected').addEventListener('click', (e) => {
         <html>
           <head>
             <title>EdCube | Amazing free math.</title>
-            <link rel="icon" href="https://i.ibb.co/bK5HjNQ/edcubefavicon.jpg" type="image/x-icon">
+            <link rel="icon" href="https://electricube.codeberg.page/icons/edlogo.jpeg" type="image/x-icon">
             <style>
               html, body { margin: 0; height: 100%; overflow: hidden; }
               iframe { width: 100%; height: 100%; border: none; }
             </style>
           </head>
           <body>
-            <iframe src="https://excube.codeberg.page/mainpage.html" sandbox="allow-scripts allow-same-origin"></iframe>
+            <iframe src="https://electricube.codeberg.page/mainpage.html" sandbox="allow-scripts allow-same-origin"></iframe>
           </body>
         </html>
       `);
@@ -586,7 +549,6 @@ function setupEvents() {
   acc.classList.toggle('active');
 
   if (acc.classList.contains('active')) {
-    // Slight delay to wait for expand animation
     setTimeout(() => {
       acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 200);
