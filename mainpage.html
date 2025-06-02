@@ -32,11 +32,12 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZJ4RW4BH4"></script>
 <script>
+  const game_width = "G-EZJ4RW4BH4";
+  const game_height = atob(game_width);
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-EZJ4RW4BH4');
+  gtag('config', game_height);
 </script>
   <!--background-->
   <canvas id="neuro"></canvas>
