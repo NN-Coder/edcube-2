@@ -233,6 +233,79 @@ header {
             height: 50px;
             width: 62.5px;
         }
+
+/*form*/
+.fs-form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #111;
+    border: 2px solid #00ffcc;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffcc;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 30px;
+}
+
+.fs-fieldset-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+}
+
+.fs-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #00ffcc;
+}
+
+input.form-user,
+textarea.form-para {
+    width: 100%;
+    padding: 15px;
+    background-color: #222;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffcc inset;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input.form-user:focus,
+textarea.form-para:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+.fs-button {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    border: 2px solid #00ffcc;
+    color: #00ffcc;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ffcc;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.fs-button:hover {
+    background-color: #ff00ff;
+    box-shadow: 0 0 25px #ff00ff;
+    color: #00ffcc;
+}
         
        
         

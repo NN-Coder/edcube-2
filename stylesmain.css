@@ -395,7 +395,7 @@
 
 
         /*search bar*/
-        #myInput {
+        .myInput {
             background-image: url('/css/searchicon.png');
             background-position: 10px 12px;
             background-repeat: no-repeat;
@@ -519,3 +519,4 @@ nav ul ul li {
 	
 li > a:after { content:  ' ▾'; }
 li > a:only-child:after { content: ''; }
+
