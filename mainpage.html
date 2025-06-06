@@ -566,12 +566,24 @@ allGameButtons.forEach(button => {
 
 function renderFavorites() {
   favoritesContainer.innerHTML = '';
+
   favorites.forEach(id => {
     const game = document.querySelector(`#allGamesContainer .game-button[data-game-id="${id}"]`);
     if (game) {
       const clone = game.cloneNode(true);
       const heart = clone.querySelector('.heart');
-      if (heart) heart.textContent = '🩷';
+      if (heart) {
+        heart.textContent = '🩷';
+
+        heart.addEventListener('click', e => {
+          e.preventDefault();
+          favorites = favorites.filter(fav => fav !== id);
+          saveFavorites(favorites);
+          renderFavorites();
+          updateAllHearts();
+        });
+      }
+
       favoritesContainer.appendChild(clone);
     }
   });
