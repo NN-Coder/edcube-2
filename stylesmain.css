@@ -612,3 +612,17 @@ li > a:only-child:after { content: ''; }
     z-index: 9999;
   }
 
+.discord-popup {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    display: none;
+    border: 2px solid #00ffcc;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1000;
+    box-shadow: 0px 0px 15px #00ffcc;
+    background-color: #111;
+}
