@@ -144,8 +144,13 @@
     <header>
         <div class="logo"><img src="logo.jpeg"></div>
 
-        <div class="header-buttons" id="StickyHeader">
-             <div class="popup-wrapper"><a style="text-decoration: none;" id="openProtected" href="#">Blank URL<img style="height: 15px; width: 15px; margin-left: 7px; margin-bottom: 5px;" src="icons/popup.png"></a></div>
+          <div class="header-buttons" id="StickyHeader">
+             <div class="popup-wrapper">
+                <a id="toggleSettings" href="#" style="text-decoration: none;">
+                  Settings
+                </a>
+          </div>
+          <div class="popup-wrapper"><a style="text-decoration: none;" id="openProtected" href="#">Blank URL<img style="height: 15px; width: 15px; margin-left: 7px; margin-bottom: 5px;" src="icons/popup.png"></a></div>
               <nav>
                   <ul>
                       <li>
@@ -162,9 +167,11 @@
                       </ul>
                   </ul>
               </nav>            
-    </div>
+        </div>
     </header>
-  
+    <div id="settingsPopup" class="settings-popup">
+      <button id="toggleBackgroundBtn">Turn Off Background</button>
+    </div>
 
     <h2>Welcome to EdCube Gaming!</h2>
 
@@ -686,6 +693,30 @@ updateAllHearts();
   discordIcon.addEventListener("click", (e) => {
     e.preventDefault();
     discordPopup.style.display = discordPopup.style.display === "none" || discordPopup.style.display === "" ? "block" : "none";
+  });
+</script>
+<script>
+  const settingsBtn = document.getElementById("toggleSettings");
+  const settingsPopup = document.getElementById("settingsPopup");
+  const toggleBackgroundBtn = document.getElementById("toggleBackgroundBtn");
+  const canvas = document.getElementById("neuro");
+
+  let backgroundEnabled = true;
+
+  settingsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    settingsPopup.style.display = settingsPopup.style.display === "block" ? "none" : "block";
+  });
+
+  toggleBackgroundBtn.addEventListener("click", () => {
+    backgroundEnabled = !backgroundEnabled;
+    canvas.style.display = backgroundEnabled ? "block" : "none";
+    toggleBackgroundBtn.textContent = backgroundEnabled ? "Turn Off Background" : "Turn On Background";
+  });
+
+  // Optional: press ESC to close the popup
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") settingsPopup.style.display = "none";
   });
 </script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

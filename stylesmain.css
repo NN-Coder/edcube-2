@@ -626,3 +626,33 @@ li > a:only-child:after { content: ''; }
     box-shadow: 0px 0px 15px #00ffcc;
     background-color: #111;
 }
+.settings-popup {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #111;
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px #00ffcc;
+  z-index: 999;
+  display: none;
+}
+
+#toggleBackgroundBtn {
+  background-color: #333;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: Orbitron, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#toggleBackgroundBtn:hover {
+  background-color: #ff00ff;
+  color: #00ffcc;
+  box-shadow: 0 0 15px #ff00ff;
+}
