@@ -520,3 +520,95 @@ nav ul ul li {
 li > a:after { content:  ' ▾'; }
 li > a:only-child:after { content: ''; }
 
+.gear-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    background: #111;
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    user-select: none;
+  }
+
+  .gear-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #ff00ff;
+  }
+
+  .popup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #222;
+    border: 2px solid #00ffcc;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    display: none;
+    z-index: 9999;
+    animation: fadeInUp 0.4s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .popup input {
+    background: #111;
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .popup button {
+    width: 100%;
+    background: #00ffcc;
+    color: #111;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .popup button:hover {
+    background: #ff00ff;
+    color: #00ffcc;
+    box-shadow: 0 0 10px #ff00ff;
+  }
+
+  .invalid-msg {
+    position: fixed;
+    bottom: 20px;
+    right: 90px;
+    color: #ff00ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    display: none;
+    background: #111;
+    padding: 8px 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff00ff;
+    z-index: 9999;
+  }
+
